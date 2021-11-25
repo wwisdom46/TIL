@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="c086b399-b81d-44a1-a4ec-3ca53ac75bd1" name="Default Changelist" comment="[TIL-9] Kotlin #15 스코프함수, MSA #11 소개끝">
+      <change afterPath="$PROJECT_DIR$/Kotlin/src/main/kotlin/InterfaceTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Kotlin/.gitignore" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="">
+          <activation />
+        </task>
+        <task path="$PROJECT_DIR$/Kotlin">
+          <activation />
+        </task>
+        <projects_view />
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Kotlin Class" />
+        <option value="Kotlin Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="20wszkxqw2o0iKtZparkgY7tOZk" />
+  <component name="ProjectViewState">
+    <option name="autoscrollToSource" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="showMembers" value="true" />
+    <option name="showVisibilityIcons" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+  </component>
+  <component name="RunManager">
+    <configuration name="Kotlin" type="GradleRunConfiguration" factoryName="Gradle">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/Kotlin" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="Main" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list />
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c086b399-b81d-44a1-a4ec-3ca53ac75bd1" name="Default Changelist" comment="" />
+      <created>1636967251046</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1636967251046</updated>
+      <workItem from="1636967254956" duration="1588000" />
+      <workItem from="1637065414958" duration="145000" />
+      <workItem from="1637065623221" duration="565000" />
+      <workItem from="1637066311422" duration="5482000" />
+      <workItem from="1637072939298" duration="214000" />
+      <workItem from="1637073321744" duration="381000" />
+      <workItem from="1637073713784" duration="6000" />
+      <workItem from="1637073734570" duration="149000" />
+      <workItem from="1637073893692" duration="650000" />
+      <workItem from="1637074753193" duration="78000" />
+      <workItem from="1637074841965" duration="1748000" />
+      <workItem from="1637142260042" duration="2176000" />
+      <workItem from="1637424581272" duration="1366000" />
+      <workItem from="1637486377983" duration="193000" />
+      <workItem from="1637593240481" duration="60000" />
+      <workItem from="1637682110760" duration="226000" />
+      <workItem from="1637764939999" duration="677000" />
+      <workItem from="1637766492920" duration="211000" />
+      <workItem from="1637852021330" duration="822000" />
+      <workItem from="1637854791313" duration="726000" />
+    </task>
+    <task id="LOCAL-00001" summary="[TIL-3] Kotlin #2,3,4">
+      <created>1637142386581</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1637142386581</updated>
+    </task>
+    <task id="LOCAL-00002" summary="[TIL-3] MSA #8">
+      <created>1637160722742</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1637160722742</updated>
+    </task>
+    <task id="LOCAL-00003" summary="[TIL-4] MSA #9,10 Kotlin #5,6">
+      <created>1637248172323</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1637248172324</updated>
+    </task>
+    <task id="LOCAL-00004" summary="[TIL-5] MSA #11 Kotlin #7">
+      <created>1637337110548</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1637337110548</updated>
+    </task>
+    <task id="LOCAL-00005" summary="[TIL-6] Kotlin #8,9,10 (클래스)">
+      <created>1637426325417</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1637426325417</updated>
+    </task>
+    <task id="LOCAL-00006" summary="[TIL-7] Kotlin #11,12">
+      <created>1637486557357</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1637486557357</updated>
+    </task>
+    <task id="LOCAL-00007" summary="[TIL-8] Kotlin #13 스코프">
+      <created>1637593294837</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1637593294837</updated>
+    </task>
+    <task id="LOCAL-00008" summary="[TIL-9] Kotlin #15 스코프함수, MSA #11 소개끝">
+      <created>1637766511367</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1637766511367</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ID_ORDER">
+      <list>
+        <option value="Default.Root" />
+        <option value="Default.Author" />
+        <option value="Default.Date" />
+        <option value="Default.Subject" />
+        <option value="Space.CommitStatus" />
+      </list>
+    </option>
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="1ab637f7-9fa3-483b-80ed-57c289fdb524">
+          <value>
+            <State>
+              <option name="SHOW_ONLY_AFFECTED_CHANGES" value="true" />
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="HEAD" />
+                      </list>
+                    </value>
+                  </entry>
+                  <entry key="structure">
+                    <value>
+                      <list>
+                        <option value="dir:/Users/wisdom/study/TIL/Kotlin" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="OPEN_GENERIC_TABS">
+      <map>
+        <entry key="1ab637f7-9fa3-483b-80ed-57c289fdb524" value="TOOL_WINDOW" />
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="[TIL-3] Kotlin #2,3,4" />
+    <MESSAGE value="[TIL-3] MSA #8" />
+    <MESSAGE value="[TIL-4] MSA #9,10 Kotlin #5,6" />
+    <MESSAGE value="[TIL-5] MSA #11 Kotlin #7" />
+    <MESSAGE value="[TIL-6] Kotlin #8,9,10 (클래스)" />
+    <MESSAGE value="[TIL-6] Kotlin #11,12" />
+    <MESSAGE value="[TIL-7] Kotlin #11,12" />
+    <MESSAGE value="[TIL-8] Kotlin #13 스코프" />
+    <MESSAGE value="[TIL-9] Kotlin #15 스코프함수, MSA #11 소개끝" />
+    <option name="LAST_COMMIT_MESSAGE" value="[TIL-9] Kotlin #15 스코프함수, MSA #11 소개끝" />
+  </component>
+</project>
