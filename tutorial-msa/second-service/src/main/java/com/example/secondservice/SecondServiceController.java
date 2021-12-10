@@ -4,8 +4,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+// http://localhost:8081/welcome
+// http://localhost:8081/second-service/welcome
 @RestController
-@RequestMapping("/")
+@RequestMapping("/second-service")
 public class SecondServiceController {
     @GetMapping("/welcome")
     public String welcome() {
