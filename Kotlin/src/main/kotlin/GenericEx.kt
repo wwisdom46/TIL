@@ -5,7 +5,7 @@ fun main() {
 
     doShouting(B()) // 캐스팅 없이 B의 객체 그대로 함수에서 사
 }
-// rebase test - test
+
 fun <T: A> doShouting(t: T) {
      t.shout()
 }
