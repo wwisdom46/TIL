@@ -4,7 +4,16 @@ server:
 spring:
   application:
     name: user-service
+  h2:
+    console:
+        enabled: true
+        settings:
+          web-allow-others: true
+        path: /h2-console
+
 eureka:
+  instatnce:
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
   client:
     fetch-registry: true
     register-with-eureka: true
@@ -13,3 +22,5 @@ eureka:
   instance:
     instance-id: ${spring.cloud.client.hostname}:${spring.application.instance_id:${random.value}}
 
+greeting:
+  message: Welcome to the Simple E-commerce.
