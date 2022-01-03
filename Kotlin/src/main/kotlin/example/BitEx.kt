@@ -1,3 +1,5 @@
+package example
+
 fun main() {
     var bitData: Int = 0b10000
 

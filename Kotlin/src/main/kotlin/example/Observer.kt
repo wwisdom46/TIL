@@ -1,3 +1,5 @@
+package example
+
 fun main() {
     EventPrinter().start()
 }
@@ -6,7 +8,7 @@ interface EventListener {
     fun onEvent(count: Int)
 }
 
-class Counter(var Listner: EventListener) {
+class Counter(var listener: EventListener) {
 
     fun count() {
         for(i in 1..100) {

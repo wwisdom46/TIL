@@ -1,3 +1,5 @@
+package example
+
 fun main() {
     var d = Dog()
     d.run()

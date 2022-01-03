@@ -1,3 +1,5 @@
+package example
+
 fun main () {
     data class Person(val name: String, val birthYear: Int)
 

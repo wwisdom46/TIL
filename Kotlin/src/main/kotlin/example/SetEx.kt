@@ -1,3 +1,5 @@
+package example
+
 fun main() {
 
     val a = mutableSetOf("귤", "바나나", "키위")

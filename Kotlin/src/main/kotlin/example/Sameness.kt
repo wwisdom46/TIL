@@ -1,3 +1,5 @@
+package example
+
 fun main() {
     var a = Product("coke", 1000)
     var b = Product("coke", 1000)

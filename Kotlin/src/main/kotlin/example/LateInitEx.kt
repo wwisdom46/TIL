@@ -1,4 +1,4 @@
-import java.awt.SystemColor.text
+package example
 
 fun main() {
     val a = LateInitSample()

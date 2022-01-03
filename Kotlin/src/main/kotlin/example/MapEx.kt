@@ -1,3 +1,5 @@
+package example
+
 fun main() {
 
     val a = mutableMapOf("레드벨벳" to "음파",

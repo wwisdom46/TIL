@@ -1,3 +1,5 @@
+package example
+
 fun main() {
     val number: Int by lazy {
         println("초기화")

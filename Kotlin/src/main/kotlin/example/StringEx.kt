@@ -1,3 +1,5 @@
+package example
+
 fun main() {
 
     val test1 = "Test.Kotlin.String"

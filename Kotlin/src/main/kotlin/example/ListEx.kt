@@ -1,3 +1,5 @@
+package example
+
 fun main() {
 
     val a = listOf("A", "B", "C");
@@ -24,5 +26,5 @@ fun main() {
     println(b)
 
     b.sort()
-    prinln(b)
+    println(b)
 }

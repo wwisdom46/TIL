@@ -1,3 +1,5 @@
+package example
+
 fun main() {
     var foodCourt = FoodCourt()
 

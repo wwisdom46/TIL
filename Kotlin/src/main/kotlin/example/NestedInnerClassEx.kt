@@ -1,3 +1,5 @@
+package example
+
 fun main () {
     Outer.Nested().introduce() // Nested Class
 
