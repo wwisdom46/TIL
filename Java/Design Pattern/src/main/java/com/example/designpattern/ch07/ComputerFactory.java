@@ -8,11 +8,7 @@ public class ComputerFactory {
         this.print = print;
     }
 
-    public Computer makeAndGet() {
-
-    }
-
-    public void Computer make() {
+    public void make() {
         print.setRam();
         print.setCpu();
         print.setStorage();
