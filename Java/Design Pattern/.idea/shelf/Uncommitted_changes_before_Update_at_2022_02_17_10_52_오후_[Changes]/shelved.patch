@@ -1,0 +1,387 @@
+Index: ../../tutorial-msa/catalog-service/.idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/../../tutorial-msa/catalog-service/.idea/workspace.xml b/../../tutorial-msa/catalog-service/.idea/workspace.xml
+new file mode 100644
+--- /dev/null	(date 1644670221352)
++++ b/../../tutorial-msa/catalog-service/.idea/workspace.xml	(date 1644670221352)
+@@ -0,0 +1,374 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="AutoImportSettings">
++    <option name="autoReloadType" value="SELECTIVE" />
++  </component>
++  <component name="ChangeListManager">
++    <list default="true" id="245bab5d-1cac-4525-aaef-e36ffc37f172" name="Changes" comment="">
++      <change afterPath="$PROJECT_DIR$/../../.idea/shelf/Uncommitted_changes_before_Update_at_2022_02_06_10_20___Default_Changelist_.xml" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../.idea/shelf/Uncommitted_changes_before_Update_at_2022_02_06_10_20___ignore_.xml" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/Kotlin.kotlin_module" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/build-history.bin" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/buildOutputCleanup.lock" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/class-attributes.tab" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/class-attributes.tab.keystream" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/class-attributes.tab.keystream.len" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/class-attributes.tab.len" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/class-attributes.tab.values.at" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/class-attributes.tab_i" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/class-fq-name-to-source.tab" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/class-fq-name-to-source.tab.keystream" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/class-fq-name-to-source.tab.keystream.len" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/class-fq-name-to-source.tab.len" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/class-fq-name-to-source.tab.values.at" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/class-fq-name-to-source.tab_i" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/executionHistory.bin" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/executionHistory.lock" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/file-to-id.tab" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/file-to-id.tab.keystream.len" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/file-to-id.tab.len" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/file-to-id.tab.values.at" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/file-to-id.tab_i" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/fileHashes.bin" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/fileHashes.lock" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/id-to-file.tab" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/id-to-file.tab.keystream" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/id-to-file.tab.keystream.len" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/id-to-file.tab.len" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/id-to-file.tab.values.at" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/id-to-file.tab_i" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/internal-name-to-source.tab" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/internal-name-to-source.tab.keystream" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/internal-name-to-source.tab.keystream.len" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/internal-name-to-source.tab.len" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/internal-name-to-source.tab.values.at" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/internal-name-to-source.tab_i" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/last-build.bin" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/lookups.tab" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/lookups.tab.keystream" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/lookups.tab.keystream.len" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/lookups.tab.len" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/lookups.tab.values.at" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/lookups.tab_i" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/outputFiles.bin" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/package-parts.tab" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/package-parts.tab.keystream" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/package-parts.tab.keystream.len" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/package-parts.tab.len" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/package-parts.tab.values.at" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/package-parts.tab_i" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/proto.tab" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/proto.tab.keystream" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/proto.tab.keystream.len" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/proto.tab.len" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/proto.tab.values.at" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/proto.tab_i" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/shelved.patch" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/source-to-classes.tab" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/source-to-classes.tab.keystream.len" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/source-to-classes.tab.len" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/source-to-classes.tab.values.at" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/source-to-classes.tab_i" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/source-to-output.tab" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/source-to-output.tab.keystream.len" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/source-to-output.tab.len" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/source-to-output.tab.values.at" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/source-to-output.tab_i" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/subtypes.tab" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/subtypes.tab.keystream" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/subtypes.tab.keystream.len" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/subtypes.tab.len" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/subtypes.tab.values.at" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/subtypes.tab_i" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/supertypes.tab" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/supertypes.tab.keystream" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/supertypes.tab.keystream.len" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/supertypes.tab.len" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/supertypes.tab.values.at" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/supertypes.tab_i" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/Kotlin.kotlin_module" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/build-history.bin" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/buildOutputCleanup.lock" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/class-attributes.tab" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/class-attributes.tab.keystream" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/class-attributes.tab.keystream.len" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/class-attributes.tab.len" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/class-attributes.tab.values.at" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/class-attributes.tab_i" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/class-fq-name-to-source.tab" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/class-fq-name-to-source.tab.keystream" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/class-fq-name-to-source.tab.keystream.len" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/class-fq-name-to-source.tab.len" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/class-fq-name-to-source.tab.values.at" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/class-fq-name-to-source.tab_i" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/executionHistory.bin" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/executionHistory.lock" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/file-to-id.tab" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/file-to-id.tab.keystream.len" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/file-to-id.tab.len" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/file-to-id.tab.values.at" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/file-to-id.tab_i" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/fileHashes.bin" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/fileHashes.lock" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/id-to-file.tab" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/id-to-file.tab.keystream" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/id-to-file.tab.keystream.len" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/id-to-file.tab.len" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/id-to-file.tab.values.at" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/id-to-file.tab_i" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/internal-name-to-source.tab" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/internal-name-to-source.tab.keystream" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/internal-name-to-source.tab.keystream.len" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/internal-name-to-source.tab.len" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/internal-name-to-source.tab.values.at" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/internal-name-to-source.tab_i" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/last-build.bin" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/lookups.tab" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/lookups.tab.keystream" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/lookups.tab.keystream.len" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/lookups.tab.len" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/lookups.tab.values.at" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/lookups.tab_i" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/outputFiles.bin" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/package-parts.tab" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/package-parts.tab.keystream" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/package-parts.tab.keystream.len" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/package-parts.tab.len" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/package-parts.tab.values.at" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/package-parts.tab_i" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/proto.tab" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/proto.tab.keystream" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/proto.tab.keystream.len" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/proto.tab.len" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/proto.tab.values.at" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/proto.tab_i" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/shelved.patch" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/source-to-classes.tab" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/source-to-classes.tab.keystream.len" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/source-to-classes.tab.len" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/source-to-classes.tab.values.at" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/source-to-classes.tab_i" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/source-to-output.tab" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/source-to-output.tab.keystream.len" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/source-to-output.tab.len" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/source-to-output.tab.values.at" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/source-to-output.tab_i" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/subtypes.tab" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/subtypes.tab.keystream" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/subtypes.tab.keystream.len" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/subtypes.tab.len" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/subtypes.tab.values.at" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/subtypes.tab_i" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/supertypes.tab" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/supertypes.tab.keystream" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/supertypes.tab.keystream.len" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/supertypes.tab.len" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/supertypes.tab.values.at" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/supertypes.tab_i" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../Java/Design Pattern/.gitignore" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../Java/Design Pattern/build.gradle" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../Java/Design Pattern/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../Java/Design Pattern/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../Java/Design Pattern/gradlew" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../Java/Design Pattern/gradlew.bat" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../Java/Design Pattern/settings.gradle" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../Java/Design Pattern/src/main/java/com/example/designpattern/DesignPatternApplication.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../Java/Design Pattern/src/main/resources/application.properties" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../Java/Design Pattern/src/test/java/com/example/designpattern/DesignPatternApplicationTests.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../Kotlin/.idea/uiDesigner.xml" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../../Spring/batch/spring-batch-retry.png" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/../../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/../../Java/Design Pattern/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Java/Design Pattern/.idea/gradle.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/../../Java/Design Pattern/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Java/Design Pattern/.idea/misc.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/../../Kotlin/.gradle/7.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../../Kotlin/.gradle/7.1/executionHistory/executionHistory.bin" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/../../Kotlin/.gradle/7.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../../Kotlin/.gradle/7.1/executionHistory/executionHistory.lock" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/../../Kotlin/.gradle/7.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../../Kotlin/.gradle/7.1/fileHashes/fileHashes.bin" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/../../Kotlin/.gradle/7.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../../Kotlin/.gradle/7.1/fileHashes/fileHashes.lock" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/../../Kotlin/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../../Kotlin/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/../../Kotlin/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../../Kotlin/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/../../Kotlin/.gradle/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../../Kotlin/.gradle/checksums/checksums.lock" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/../../Kotlin/build/classes/kotlin/main/META-INF/Kotlin.kotlin_module" beforeDir="false" afterPath="$PROJECT_DIR$/../../Kotlin/build/classes/kotlin/main/META-INF/Kotlin.kotlin_module" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/../../Kotlin/build/kotlin/compileKotlin/build-history.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../../Kotlin/build/kotlin/compileKotlin/build-history.bin" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/../../Kotlin/build/kotlin/compileKotlin/caches-jvm/inputs/source-to-output.tab" beforeDir="false" afterPath="$PROJECT_DIR$/../../Kotlin/build/kotlin/compileKotlin/caches-jvm/inputs/source-to-output.tab" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/../../Kotlin/build/kotlin/compileKotlin/caches-jvm/inputs/source-to-output.tab.keystream" beforeDir="false" afterPath="$PROJECT_DIR$/../../Kotlin/build/kotlin/compileKotlin/caches-jvm/inputs/source-to-output.tab.keystream" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/../../Kotlin/build/kotlin/compileKotlin/caches-jvm/inputs/source-to-output.tab.keystream.len" beforeDir="false" afterPath="$PROJECT_DIR$/../../Kotlin/build/kotlin/compileKotlin/caches-jvm/inputs/source-to-output.tab.keystream.len" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/../../Kotlin/build/kotlin/compileKotlin/caches-jvm/inputs/source-to-output.tab.len" beforeDir="false" afterPath="$PROJECT_DIR$/../../Kotlin/build/kotlin/compileKotlin/caches-jvm/inputs/source-to-output.tab.len" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/../../Kotlin/build/kotlin/compileKotlin/caches-jvm/inputs/source-to-output.tab.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/../../Kotlin/build/kotlin/compileKotlin/caches-jvm/inputs/source-to-output.tab.values.at" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/../../Kotlin/build/kotlin/compileKotlin/caches-jvm/inputs/source-to-output.tab_i" beforeDir="false" afterPath="$PROJECT_DIR$/../../Kotlin/build/kotlin/compileKotlin/caches-jvm/inputs/source-to-output.tab_i" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/../../Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/class-attributes.tab" beforeDir="false" afterPath="$PROJECT_DIR$/../../Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/class-attributes.tab" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/../../Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/class-attributes.tab.keystream" beforeDir="false" afterPath="$PROJECT_DIR$/../../Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/class-attributes.tab.keystream" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/../../Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/class-attributes.tab.keystream.len" beforeDir="false" afterPath="$PROJECT_DIR$/../../Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/class-attributes.tab.keystream.len" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/../../Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/class-attributes.tab.len" beforeDir="false" afterPath="$PROJECT_DIR$/../../Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/class-attributes.tab.len" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/../../Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/class-attributes.tab.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/../../Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/class-attributes.tab.values.at" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/../../Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/class-attributes.tab_i" beforeDir="false" afterPath="$PROJECT_DIR$/../../Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/class-attributes.tab_i" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/../../Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab" beforeDir="false" afterPath="$PROJECT_DIR$/../../Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/../../Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab.keystream" beforeDir="false" afterPath="$PROJECT_DIR$/../../Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab.keystream" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/../../Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab.keystream.len" beforeDir="false" afterPath="$PROJECT_DIR$/../../Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab.keystream.len" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/../../Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab.len" beforeDir="false" afterPath="$PROJECT_DIR$/../../Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab.len" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/../../Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/../../Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab.values.at" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/../../Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab_i" beforeDir="false" afterPath="$PROJECT_DIR$/../../Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab_i" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/../../Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/internal-name-to-source.tab" beforeDir="false" afterPath="$PROJECT_DIR$/../../Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/internal-name-to-source.tab" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/../../Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/internal-name-to-source.tab.keystream" beforeDir="false" afterPath="$PROJECT_DIR$/../../Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/internal-name-to-source.tab.keystream" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/../../Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/internal-name-to-source.tab.keystream.len" beforeDir="false" afterPath="$PROJECT_DIR$/../../Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/internal-name-to-source.tab.keystream.len" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/../../Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/internal-name-to-source.tab.len" beforeDir="false" afterPath="$PROJECT_DIR$/../../Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/internal-name-to-source.tab.len" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/../../Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/internal-name-to-source.tab.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/../../Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/internal-name-to-source.tab.values.at" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/../../Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/internal-name-to-source.tab_i" beforeDir="false" afterPath="$PROJECT_DIR$/../../Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/internal-name-to-source.tab_i" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/../../Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/package-parts.tab" beforeDir="false" afterPath="$PROJECT_DIR$/../../Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/package-parts.tab" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/../../Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/package-parts.tab.keystream" beforeDir="false" afterPath="$PROJECT_DIR$/../../Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/package-parts.tab.keystream" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/../../Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/package-parts.tab.keystream.len" beforeDir="false" afterPath="$PROJECT_DIR$/../../Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/package-parts.tab.keystream.len" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/../../Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/package-parts.tab.len" beforeDir="false" afterPath="$PROJECT_DIR$/../../Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/package-parts.tab.len" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/../../Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/package-parts.tab.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/../../Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/package-parts.tab.values.at" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/../../Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/package-parts.tab_i" beforeDir="false" afterPath="$PROJECT_DIR$/../../Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/package-parts.tab_i" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/../../Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/proto.tab" beforeDir="false" afterPath="$PROJECT_DIR$/../../Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/proto.tab" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/../../Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/proto.tab.keystream" beforeDir="false" afterPath="$PROJECT_DIR$/../../Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/proto.tab.keystream" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/../../Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/proto.tab.keystream.len" beforeDir="false" afterPath="$PROJECT_DIR$/../../Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/proto.tab.keystream.len" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/../../Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/proto.tab.len" beforeDir="false" afterPath="$PROJECT_DIR$/../../Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/proto.tab.len" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/../../Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/proto.tab.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/../../Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/proto.tab.values.at" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/../../Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/proto.tab_i" beforeDir="false" afterPath="$PROJECT_DIR$/../../Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/proto.tab_i" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/../../Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/source-to-classes.tab" beforeDir="false" afterPath="$PROJECT_DIR$/../../Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/source-to-classes.tab" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/../../Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/source-to-classes.tab.keystream" beforeDir="false" afterPath="$PROJECT_DIR$/../../Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/source-to-classes.tab.keystream" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/../../Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/source-to-classes.tab.keystream.len" beforeDir="false" afterPath="$PROJECT_DIR$/../../Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/source-to-classes.tab.keystream.len" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/../../Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/source-to-classes.tab.len" beforeDir="false" afterPath="$PROJECT_DIR$/../../Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/source-to-classes.tab.len" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/../../Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/source-to-classes.tab.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/../../Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/source-to-classes.tab.values.at" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/../../Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/source-to-classes.tab_i" beforeDir="false" afterPath="$PROJECT_DIR$/../../Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/source-to-classes.tab_i" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/../../Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/subtypes.tab" beforeDir="false" afterPath="$PROJECT_DIR$/../../Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/subtypes.tab" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/../../Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/subtypes.tab.keystream" beforeDir="false" afterPath="$PROJECT_DIR$/../../Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/subtypes.tab.keystream" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/../../Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/subtypes.tab.keystream.len" beforeDir="false" afterPath="$PROJECT_DIR$/../../Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/subtypes.tab.keystream.len" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/../../Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/subtypes.tab.len" beforeDir="false" afterPath="$PROJECT_DIR$/../../Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/subtypes.tab.len" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/../../Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/subtypes.tab.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/../../Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/subtypes.tab.values.at" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/../../Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/subtypes.tab_i" beforeDir="false" afterPath="$PROJECT_DIR$/../../Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/subtypes.tab_i" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/../../Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/supertypes.tab" beforeDir="false" afterPath="$PROJECT_DIR$/../../Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/supertypes.tab" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/../../Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/supertypes.tab.keystream" beforeDir="false" afterPath="$PROJECT_DIR$/../../Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/supertypes.tab.keystream" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/../../Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/supertypes.tab.keystream.len" beforeDir="false" afterPath="$PROJECT_DIR$/../../Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/supertypes.tab.keystream.len" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/../../Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/supertypes.tab.len" beforeDir="false" afterPath="$PROJECT_DIR$/../../Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/supertypes.tab.len" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/../../Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/supertypes.tab.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/../../Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/supertypes.tab.values.at" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/../../Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/supertypes.tab_i" beforeDir="false" afterPath="$PROJECT_DIR$/../../Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/supertypes.tab_i" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/../../Kotlin/build/kotlin/compileKotlin/caches-jvm/lookups/counters.tab" beforeDir="false" afterPath="$PROJECT_DIR$/../../Kotlin/build/kotlin/compileKotlin/caches-jvm/lookups/counters.tab" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/../../Kotlin/build/kotlin/compileKotlin/caches-jvm/lookups/file-to-id.tab" beforeDir="false" afterPath="$PROJECT_DIR$/../../Kotlin/build/kotlin/compileKotlin/caches-jvm/lookups/file-to-id.tab" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/../../Kotlin/build/kotlin/compileKotlin/caches-jvm/lookups/file-to-id.tab.keystream" beforeDir="false" afterPath="$PROJECT_DIR$/../../Kotlin/build/kotlin/compileKotlin/caches-jvm/lookups/file-to-id.tab.keystream" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/../../Kotlin/build/kotlin/compileKotlin/caches-jvm/lookups/file-to-id.tab.keystream.len" beforeDir="false" afterPath="$PROJECT_DIR$/../../Kotlin/build/kotlin/compileKotlin/caches-jvm/lookups/file-to-id.tab.keystream.len" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/../../Kotlin/build/kotlin/compileKotlin/caches-jvm/lookups/file-to-id.tab.len" beforeDir="false" afterPath="$PROJECT_DIR$/../../Kotlin/build/kotlin/compileKotlin/caches-jvm/lookups/file-to-id.tab.len" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/../../Kotlin/build/kotlin/compileKotlin/caches-jvm/lookups/file-to-id.tab.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/../../Kotlin/build/kotlin/compileKotlin/caches-jvm/lookups/file-to-id.tab.values.at" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/../../Kotlin/build/kotlin/compileKotlin/caches-jvm/lookups/file-to-id.tab_i" beforeDir="false" afterPath="$PROJECT_DIR$/../../Kotlin/build/kotlin/compileKotlin/caches-jvm/lookups/file-to-id.tab_i" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/../../Kotlin/build/kotlin/compileKotlin/caches-jvm/lookups/id-to-file.tab" beforeDir="false" afterPath="$PROJECT_DIR$/../../Kotlin/build/kotlin/compileKotlin/caches-jvm/lookups/id-to-file.tab" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/../../Kotlin/build/kotlin/compileKotlin/caches-jvm/lookups/id-to-file.tab.keystream" beforeDir="false" afterPath="$PROJECT_DIR$/../../Kotlin/build/kotlin/compileKotlin/caches-jvm/lookups/id-to-file.tab.keystream" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/../../Kotlin/build/kotlin/compileKotlin/caches-jvm/lookups/id-to-file.tab.keystream.len" beforeDir="false" afterPath="$PROJECT_DIR$/../../Kotlin/build/kotlin/compileKotlin/caches-jvm/lookups/id-to-file.tab.keystream.len" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/../../Kotlin/build/kotlin/compileKotlin/caches-jvm/lookups/id-to-file.tab.len" beforeDir="false" afterPath="$PROJECT_DIR$/../../Kotlin/build/kotlin/compileKotlin/caches-jvm/lookups/id-to-file.tab.len" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/../../Kotlin/build/kotlin/compileKotlin/caches-jvm/lookups/id-to-file.tab.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/../../Kotlin/build/kotlin/compileKotlin/caches-jvm/lookups/id-to-file.tab.values.at" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/../../Kotlin/build/kotlin/compileKotlin/caches-jvm/lookups/id-to-file.tab_i" beforeDir="false" afterPath="$PROJECT_DIR$/../../Kotlin/build/kotlin/compileKotlin/caches-jvm/lookups/id-to-file.tab_i" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/../../Kotlin/build/kotlin/compileKotlin/caches-jvm/lookups/lookups.tab" beforeDir="false" afterPath="$PROJECT_DIR$/../../Kotlin/build/kotlin/compileKotlin/caches-jvm/lookups/lookups.tab" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/../../Kotlin/build/kotlin/compileKotlin/caches-jvm/lookups/lookups.tab.keystream" beforeDir="false" afterPath="$PROJECT_DIR$/../../Kotlin/build/kotlin/compileKotlin/caches-jvm/lookups/lookups.tab.keystream" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/../../Kotlin/build/kotlin/compileKotlin/caches-jvm/lookups/lookups.tab.keystream.len" beforeDir="false" afterPath="$PROJECT_DIR$/../../Kotlin/build/kotlin/compileKotlin/caches-jvm/lookups/lookups.tab.keystream.len" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/../../Kotlin/build/kotlin/compileKotlin/caches-jvm/lookups/lookups.tab.len" beforeDir="false" afterPath="$PROJECT_DIR$/../../Kotlin/build/kotlin/compileKotlin/caches-jvm/lookups/lookups.tab.len" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/../../Kotlin/build/kotlin/compileKotlin/caches-jvm/lookups/lookups.tab.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/../../Kotlin/build/kotlin/compileKotlin/caches-jvm/lookups/lookups.tab.values.at" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/../../Kotlin/build/kotlin/compileKotlin/caches-jvm/lookups/lookups.tab_i" beforeDir="false" afterPath="$PROJECT_DIR$/../../Kotlin/build/kotlin/compileKotlin/caches-jvm/lookups/lookups.tab_i" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/../../Kotlin/build/kotlin/compileKotlin/last-build.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../../Kotlin/build/kotlin/compileKotlin/last-build.bin" afterDir="false" />
++    </list>
++    <option name="SHOW_DIALOG" value="false" />
++    <option name="HIGHLIGHT_CONFLICTS" value="true" />
++    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
++    <option name="LAST_RESOLUTION" value="IGNORE" />
++  </component>
++  <component name="FileTemplateManagerImpl">
++    <option name="RECENT_TEMPLATES">
++      <list>
++        <option value="Interface" />
++        <option value="Class" />
++      </list>
++    </option>
++  </component>
++  <component name="Git.Settings">
++    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
++  </component>
++  <component name="ProjectId" id="250bqDMOPtyfVt9uHOV5uK4qjW3" />
++  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
++  <component name="ProjectViewState">
++    <option name="hideEmptyMiddlePackages" value="true" />
++    <option name="showExcludedFiles" value="false" />
++    <option name="showLibraryContents" value="true" />
++    <option name="showMembers" value="true" />
++  </component>
++  <component name="PropertiesComponent">
++    <property name="RequestMappingsPanelOrder0" value="0" />
++    <property name="RequestMappingsPanelOrder1" value="1" />
++    <property name="RequestMappingsPanelWidth0" value="75" />
++    <property name="RequestMappingsPanelWidth1" value="75" />
++    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
++    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
++    <property name="WebServerToolWindowFactoryState" value="false" />
++    <property name="node.js.detected.package.eslint" value="true" />
++    <property name="node.js.detected.package.tslint" value="true" />
++    <property name="node.js.selected.package.eslint" value="(autodetect)" />
++    <property name="node.js.selected.package.tslint" value="(autodetect)" />
++  </component>
++  <component name="ReactorSettings">
++    <option name="notificationShown" value="true" />
++  </component>
++  <component name="RunManager">
++    <configuration name="CatalogServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
++      <module name="catalog-service" />
++      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.catalogservice.CatalogServiceApplication" />
++      <method v="2">
++        <option name="Make" enabled="true" />
++      </method>
++    </configuration>
++  </component>
++  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
++  <component name="TaskManager">
++    <task active="true" id="Default" summary="Default task">
++      <changelist id="245bab5d-1cac-4525-aaef-e36ffc37f172" name="Changes" comment="" />
++      <created>1644667140219</created>
++      <option name="number" value="Default" />
++      <option name="presentableId" value="Default" />
++      <updated>1644667140219</updated>
++      <workItem from="1644667144346" duration="2839000" />
++      <workItem from="1644670097974" duration="124000" />
++    </task>
++    <servers />
++  </component>
++  <component name="TypeScriptGeneratedFilesManager">
++    <option name="version" value="3" />
++  </component>
++  <component name="Vcs.Log.Tabs.Properties">
++    <option name="TAB_STATES">
++      <map>
++        <entry key="888cead3-dc6f-46a0-9e21-5910ae889235">
++          <value>
++            <State>
++              <option name="SHOW_ONLY_AFFECTED_CHANGES" value="true" />
++              <option name="FILTERS">
++                <map>
++                  <entry key="branch">
++                    <value>
++                      <list>
++                        <option value="HEAD" />
++                      </list>
++                    </value>
++                  </entry>
++                  <entry key="structure">
++                    <value>
++                      <list>
++                        <option value="dir:/Users/wisdom/study/TIL/tutorial-msa/catalog-service" />
++                      </list>
++                    </value>
++                  </entry>
++                </map>
++              </option>
++            </State>
++          </value>
++        </entry>
++        <entry key="MAIN">
++          <value>
++            <State />
++          </value>
++        </entry>
++      </map>
++    </option>
++    <option name="OPEN_GENERIC_TABS">
++      <map>
++        <entry key="888cead3-dc6f-46a0-9e21-5910ae889235" value="TOOL_WINDOW" />
++      </map>
++    </option>
++    <option name="oldMeFiltersMigrated" value="true" />
++  </component>
++</project>
+\ No newline at end of file
+diff --git a/../개념정리/01.직렬화.md b/../개념정리/01.직렬화.md
+new file mode 100644

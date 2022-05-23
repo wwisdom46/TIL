@@ -1,0 +1,769 @@
+Index: Java/Design Pattern/.idea/gradle.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"GradleSettings\">\n    <option name=\"linkedExternalProjectsSettings\">\n      <GradleProjectSettings>\n        <option name=\"distributionType\" value=\"DEFAULT_WRAPPED\" />\n        <option name=\"externalProjectPath\" value=\"$PROJECT_DIR$\" />\n        <option name=\"modules\">\n          <set>\n            <option value=\"$PROJECT_DIR$\" />\n          </set>\n        </option>\n      </GradleProjectSettings>\n    </option>\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Java/Design Pattern/.idea/gradle.xml b/Java/Design Pattern/.idea/gradle.xml
+--- a/Java/Design Pattern/.idea/gradle.xml	
++++ b/Java/Design Pattern/.idea/gradle.xml	
+@@ -1,5 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
++  <component name="GradleMigrationSettings" migrationVersion="1" />
+   <component name="GradleSettings">
+     <option name="linkedExternalProjectsSettings">
+       <GradleProjectSettings>
+Index: Kotlin/src/main/kotlin/example/StringUtils.kt
+===================================================================
+diff --git a/Kotlin/src/main/kotlin/example/StringUtils.kt b/Kotlin/src/main/kotlin/example/StringUtils.kt
+new file mode 100644
+--- /dev/null	
++++ b/Kotlin/src/main/kotlin/example/StringUtils.kt	
+@@ -0,0 +1,32 @@
++package example
++
++fun cutString(input: String, cutLength: Int): String? {
++    if (input.isNullOrBlank()) return input
++    return if (input.length > cutLength) return input.substring(0, cutLength) + "..."
++    else input
++}
++
++
++// 마지막 문자열이 lastString이 아니라면 input에 lastString을 붙여줌
++fun convertLastString(input: String, lastString: String): String? {
++//    if (input.isNullOrBlank()) return input
++//    return if (input.endsWith(lastString)) input
++//    else input + lastString
++    if (input?.endsWith(lastString)) return input
++    return input + lastString
++
++}
++
++fun main() {
++    println(cutString("테스트를해보자", 3))
++    println("테스트".padEnd(1, '*'))
++    println("테스트".dropLast("테스트".length))
++    println("xp"=="xp")
++    println("테스트".endsWith("트"))
++
++    println(convertLastString("테스트", "트"))
++    println(convertLastString("테스트", "굿"))
++    println(convertLastString("ABC", "D"))
++    println(convertLastString("", "D"))
++    println(convertLastString("ABCD", "D"))
++}
+\ No newline at end of file
+Index: Kotlin/src/main/kotlin/example/Tmp.kt
+===================================================================
+diff --git a/Kotlin/src/main/kotlin/example/Tmp.kt b/Kotlin/src/main/kotlin/example/Tmp.kt
+new file mode 100644
+--- /dev/null	
++++ b/Kotlin/src/main/kotlin/example/Tmp.kt	
+@@ -0,0 +1,3 @@
++package example
++
++//package com.ssg.alln.common.utils  import com.ssg.alln.common.error.BusinessException import java.util.regex.Pattern  class StringUtils {     /**      * 문자열을 maxStrLength만큼 자른다      */     fun getCutStringMaxLength(inputString: String, maxStrLength: Int): String? {         if (inputString.isNullOrBlank()) return inputString          return if (inputString.length > maxStrLength) {             inputString.substring(0, maxStrLength - 3) + "..."         } else {             inputString         }     }      /**      * 특수문자 제거      */     fun removeSymbols(inputString: String): String {        if (inputString.isNullOrBlank()) return inputString         // 특수 문자 제한 제한내용        val rexsb = StringBuffer()         // ASCII Punctuation and Symbols (ASCII 문장 부호와 기호)        rexsb.append("[")        rexsb.append("\\p{Punct}") // TODO 제휴사별 특수문자로 인식하는 문자로 변경 필요        rexsb.append("]")        val numberPattern = Pattern.compile(rexsb.toString())        val matcher = numberPattern.matcher("")        matcher.reset(inputString)        return matcher.replaceAll("")     }      /**      * 숫자를 제외한 모든 문자열 제거 후 'yyyy/mm/dd 형태로 리턴      */     fun convertToSlashDateFormat(inputString: String): String? {         var result = inputString.replace("[^0-9]".toRegex(), "")         if (inputString.isNullOrBlank()) return inputString         if (result.length != 8) throw BusinessException("날짜 포맷 변환 중 오류 : 포함된 숫자가 8자리가 아닙니다.")         return result.substring(0, 4) + "/" + result.substring(4, 6) + "/" + result.substring(6, 8)     }      /**      * 문자열의 마지막 문자가 해당 문자가 아니라면 추가      */     fun checkLastString(inputString: String, checkString: String): String? {         if (inputString.isNullOrBlank() || checkString.isNullOrBlank()) return inputString         return if (checkString.equals(inputString.substring(inputString.length - 1))) inputString + checkString         else inputString     }      /**      * 제어문자 제거      */     fun removeControlCharacter(inputString: String): String {         if (inputString.isNullOrBlank()) return inputString          // 특수 문자 제한 제한내용         val rexsb = StringBuffer()          // ASCII Punctuation and Symbols (ASCII 문장 부호와 기호)         rexsb.append("[")         rexsb.append("\u0001-\u001f")         rexsb.append("\u007f")         rexsb.append("]")         val numberPattern = Pattern.compile(rexsb.toString())         val matcher = numberPattern.matcher("")         matcher.reset(inputString)         return matcher.replaceAll("")     }  } 
+Index: Kotlin/src/main/kotlin/example/StringEx.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package example\n\nfun main() {\n\n    val test1 = \"Test.Kotlin.String\"\n\n    println(test1.length)\n\n    println(test1.toLowerCase());\n    println(test1.toUpperCase());\n\n    val test2 = test1.split(\".\")\n    println(test2)\n\n    println(test2.joinToString())\n    println(test2.joinToString(\"-\"))\n\n    println(test1.substring(5..10))\n\n    val nullString: String? = null\n    val emptyString = \"\"\n    val blankString = \" \"\n    val normalString = \"A\"\n\n    println(nullString.isNullOrBlank())\n    println(emptyString.isNullOrBlank())\n    println(blankString.isNullOrBlank())\n    println(normalString.isNullOrBlank())\n\n    var test3 = \"kotlin.kt\"\n    val test4 = \"java.java\"\n\n    println(test3.startsWith(\"java\"))\n    println(test4.startsWith(\"java\"))\n\n    println(test3.endsWith(\".kt\"))\n    println(test4.endsWith(\".kt\"))\n\n    println(test3.contains(\"lin\"))\n    println(test4.contains(\"lin\"))\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Kotlin/src/main/kotlin/example/StringEx.kt b/Kotlin/src/main/kotlin/example/StringEx.kt
+--- a/Kotlin/src/main/kotlin/example/StringEx.kt	
++++ b/Kotlin/src/main/kotlin/example/StringEx.kt	
+@@ -38,4 +38,9 @@
+ 
+     println(test3.contains("lin"))
+     println(test4.contains("lin"))
++
++    // 특수문자 제거
++    val regex = Regex("[^A-Za-z0-9]")//Regex를 활용하여 특수문자 없애주기
++    val result = regex.replace("zzzz안녕하세요!", "")
++    println("특수문자제거" + result)
+ }
+\ No newline at end of file
+Index: Java/Design Pattern/강의정리/07_Builder Pattern(1).md
+===================================================================
+diff --git a/Java/Design Pattern/강의정리/07_Builder Pattern(1).md b/Java/Design Pattern/강의정리/07_Builder Pattern(1).md
+new file mode 100644
+--- /dev/null	
++++ b/Java/Design Pattern/강의정리/07_Builder Pattern(1).md	
+@@ -0,0 +1,2 @@
++#07. Builder Pattern
++- 
+\ No newline at end of file
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"AutoImportSettings\">\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\n  </component>\n  <component name=\"ChangeListManager\">\n    <list default=\"true\" id=\"c086b399-b81d-44a1-a4ec-3ca53ac75bd1\" name=\"Default Changelist\" comment=\"Kotlin 31) 코루틴을 통한 비동기 처리\">\n      <change afterPath=\"$PROJECT_DIR$/Kotlin/.idea/vcs.xml\" afterDir=\"false\" />\n      <change afterPath=\"$PROJECT_DIR$/Kotlin/src/main/kotlin/ch3/1_collection.kt\" afterDir=\"false\" />\n      <change afterPath=\"$PROJECT_DIR$/Kotlin/src/main/kotlin/ch3/2_joinToString().kt\" afterDir=\"false\" />\n      <change afterPath=\"$PROJECT_DIR$/Kotlin/src/main/kotlin/example/GenericEx.kt\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/Kotlin/.gradle/7.1/executionHistory/executionHistory.bin\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Kotlin/.gradle/7.1/executionHistory/executionHistory.bin\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/Kotlin/.gradle/7.1/executionHistory/executionHistory.lock\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Kotlin/.gradle/7.1/executionHistory/executionHistory.lock\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/Kotlin/.gradle/7.1/fileHashes/fileHashes.bin\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Kotlin/.gradle/7.1/fileHashes/fileHashes.bin\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/Kotlin/.gradle/7.1/fileHashes/fileHashes.lock\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Kotlin/.gradle/7.1/fileHashes/fileHashes.lock\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/Kotlin/.gradle/buildOutputCleanup/buildOutputCleanup.lock\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Kotlin/.gradle/buildOutputCleanup/buildOutputCleanup.lock\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/Kotlin/.gradle/buildOutputCleanup/outputFiles.bin\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Kotlin/.gradle/buildOutputCleanup/outputFiles.bin\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/Kotlin/build/classes/kotlin/main/Dog.class\" beforeDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/Kotlin/build/classes/kotlin/main/Eater$DefaultImpls.class\" beforeDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/Kotlin/build/classes/kotlin/main/Eater.class\" beforeDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/Kotlin/build/classes/kotlin/main/InterfaceTestKt.class\" beforeDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/Kotlin/build/classes/kotlin/main/META-INF/Kotlin.kotlin_module\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Kotlin/build/classes/kotlin/main/META-INF/Kotlin.kotlin_module\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/Kotlin/build/classes/kotlin/main/MainKt.class\" beforeDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/Kotlin/build/classes/kotlin/main/Runner.class\" beforeDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/Kotlin/build/kotlin/compileKotlin/build-history.bin\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Kotlin/build/kotlin/compileKotlin/build-history.bin\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/Kotlin/build/kotlin/compileKotlin/caches-jvm/inputs/source-to-output.tab\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Kotlin/build/kotlin/compileKotlin/caches-jvm/inputs/source-to-output.tab\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/Kotlin/build/kotlin/compileKotlin/caches-jvm/inputs/source-to-output.tab.keystream\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Kotlin/build/kotlin/compileKotlin/caches-jvm/inputs/source-to-output.tab.keystream\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/Kotlin/build/kotlin/compileKotlin/caches-jvm/inputs/source-to-output.tab.keystream.len\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Kotlin/build/kotlin/compileKotlin/caches-jvm/inputs/source-to-output.tab.keystream.len\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/Kotlin/build/kotlin/compileKotlin/caches-jvm/inputs/source-to-output.tab.len\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Kotlin/build/kotlin/compileKotlin/caches-jvm/inputs/source-to-output.tab.len\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/Kotlin/build/kotlin/compileKotlin/caches-jvm/inputs/source-to-output.tab.values.at\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Kotlin/build/kotlin/compileKotlin/caches-jvm/inputs/source-to-output.tab.values.at\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/Kotlin/build/kotlin/compileKotlin/caches-jvm/inputs/source-to-output.tab_i\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Kotlin/build/kotlin/compileKotlin/caches-jvm/inputs/source-to-output.tab_i\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/class-attributes.tab\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/class-attributes.tab\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/class-attributes.tab.keystream\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/class-attributes.tab.keystream\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/class-attributes.tab.keystream.len\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/class-attributes.tab.keystream.len\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/class-attributes.tab.len\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/class-attributes.tab.len\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/class-attributes.tab.values.at\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/class-attributes.tab.values.at\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/class-attributes.tab_i\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/class-attributes.tab_i\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab.keystream\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab.keystream\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab.keystream.len\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab.keystream.len\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab.len\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab.len\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab.values.at\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab.values.at\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab_i\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab_i\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/internal-name-to-source.tab\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/internal-name-to-source.tab\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/internal-name-to-source.tab.keystream\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/internal-name-to-source.tab.keystream\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/internal-name-to-source.tab.keystream.len\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/internal-name-to-source.tab.keystream.len\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/internal-name-to-source.tab.len\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/internal-name-to-source.tab.len\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/internal-name-to-source.tab.values.at\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/internal-name-to-source.tab.values.at\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/internal-name-to-source.tab_i\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/internal-name-to-source.tab_i\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/package-parts.tab\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/package-parts.tab\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/package-parts.tab.keystream\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/package-parts.tab.keystream\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/package-parts.tab.keystream.len\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/package-parts.tab.keystream.len\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/package-parts.tab.len\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/package-parts.tab.len\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/package-parts.tab.values.at\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/package-parts.tab.values.at\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/package-parts.tab_i\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/package-parts.tab_i\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/proto.tab\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/proto.tab\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/proto.tab.keystream\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/proto.tab.keystream\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/proto.tab.keystream.len\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/proto.tab.keystream.len\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/proto.tab.len\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/proto.tab.len\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/proto.tab.values.at\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/proto.tab.values.at\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/proto.tab_i\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/proto.tab_i\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/source-to-classes.tab\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/source-to-classes.tab\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/source-to-classes.tab.keystream\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/source-to-classes.tab.keystream\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/source-to-classes.tab.keystream.len\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/source-to-classes.tab.keystream.len\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/source-to-classes.tab.len\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/source-to-classes.tab.len\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/source-to-classes.tab.values.at\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/source-to-classes.tab.values.at\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/source-to-classes.tab_i\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/source-to-classes.tab_i\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/subtypes.tab\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/subtypes.tab\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/subtypes.tab.keystream\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/subtypes.tab.keystream\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/subtypes.tab.keystream.len\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/subtypes.tab.keystream.len\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/subtypes.tab.len\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/subtypes.tab.len\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/subtypes.tab.values.at\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/subtypes.tab.values.at\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/subtypes.tab_i\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/subtypes.tab_i\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/supertypes.tab\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/supertypes.tab\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/supertypes.tab.keystream\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/supertypes.tab.keystream\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/supertypes.tab.keystream.len\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/supertypes.tab.keystream.len\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/supertypes.tab.len\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/supertypes.tab.len\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/supertypes.tab.values.at\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/supertypes.tab.values.at\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/supertypes.tab_i\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Kotlin/build/kotlin/compileKotlin/caches-jvm/jvm/kotlin/supertypes.tab_i\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/Kotlin/build/kotlin/compileKotlin/caches-jvm/lookups/counters.tab\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Kotlin/build/kotlin/compileKotlin/caches-jvm/lookups/counters.tab\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/Kotlin/build/kotlin/compileKotlin/caches-jvm/lookups/file-to-id.tab\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Kotlin/build/kotlin/compileKotlin/caches-jvm/lookups/file-to-id.tab\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/Kotlin/build/kotlin/compileKotlin/caches-jvm/lookups/file-to-id.tab.keystream\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Kotlin/build/kotlin/compileKotlin/caches-jvm/lookups/file-to-id.tab.keystream\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/Kotlin/build/kotlin/compileKotlin/caches-jvm/lookups/file-to-id.tab.keystream.len\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Kotlin/build/kotlin/compileKotlin/caches-jvm/lookups/file-to-id.tab.keystream.len\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/Kotlin/build/kotlin/compileKotlin/caches-jvm/lookups/file-to-id.tab.len\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Kotlin/build/kotlin/compileKotlin/caches-jvm/lookups/file-to-id.tab.len\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/Kotlin/build/kotlin/compileKotlin/caches-jvm/lookups/file-to-id.tab.values.at\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Kotlin/build/kotlin/compileKotlin/caches-jvm/lookups/file-to-id.tab.values.at\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/Kotlin/build/kotlin/compileKotlin/caches-jvm/lookups/file-to-id.tab_i\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Kotlin/build/kotlin/compileKotlin/caches-jvm/lookups/file-to-id.tab_i\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/Kotlin/build/kotlin/compileKotlin/caches-jvm/lookups/id-to-file.tab\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Kotlin/build/kotlin/compileKotlin/caches-jvm/lookups/id-to-file.tab\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/Kotlin/build/kotlin/compileKotlin/caches-jvm/lookups/id-to-file.tab.keystream\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Kotlin/build/kotlin/compileKotlin/caches-jvm/lookups/id-to-file.tab.keystream\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/Kotlin/build/kotlin/compileKotlin/caches-jvm/lookups/id-to-file.tab.keystream.len\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Kotlin/build/kotlin/compileKotlin/caches-jvm/lookups/id-to-file.tab.keystream.len\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/Kotlin/build/kotlin/compileKotlin/caches-jvm/lookups/id-to-file.tab.len\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Kotlin/build/kotlin/compileKotlin/caches-jvm/lookups/id-to-file.tab.len\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/Kotlin/build/kotlin/compileKotlin/caches-jvm/lookups/id-to-file.tab.values.at\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Kotlin/build/kotlin/compileKotlin/caches-jvm/lookups/id-to-file.tab.values.at\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/Kotlin/build/kotlin/compileKotlin/caches-jvm/lookups/id-to-file.tab_i\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Kotlin/build/kotlin/compileKotlin/caches-jvm/lookups/id-to-file.tab_i\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/Kotlin/build/kotlin/compileKotlin/caches-jvm/lookups/lookups.tab\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Kotlin/build/kotlin/compileKotlin/caches-jvm/lookups/lookups.tab\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/Kotlin/build/kotlin/compileKotlin/caches-jvm/lookups/lookups.tab.keystream\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Kotlin/build/kotlin/compileKotlin/caches-jvm/lookups/lookups.tab.keystream\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/Kotlin/build/kotlin/compileKotlin/caches-jvm/lookups/lookups.tab.keystream.len\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Kotlin/build/kotlin/compileKotlin/caches-jvm/lookups/lookups.tab.keystream.len\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/Kotlin/build/kotlin/compileKotlin/caches-jvm/lookups/lookups.tab.len\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Kotlin/build/kotlin/compileKotlin/caches-jvm/lookups/lookups.tab.len\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/Kotlin/build/kotlin/compileKotlin/caches-jvm/lookups/lookups.tab.values.at\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Kotlin/build/kotlin/compileKotlin/caches-jvm/lookups/lookups.tab.values.at\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/Kotlin/build/kotlin/compileKotlin/caches-jvm/lookups/lookups.tab_i\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Kotlin/build/kotlin/compileKotlin/caches-jvm/lookups/lookups.tab_i\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/Kotlin/build/kotlin/compileKotlin/last-build.bin\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Kotlin/build/kotlin/compileKotlin/last-build.bin\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/Kotlin/src/main/kotlin/BitEx.kt\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Kotlin/src/main/kotlin/example/BitEx.kt\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/Kotlin/src/main/kotlin/CollectionEx.kt\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Kotlin/src/main/kotlin/example/CollectionEx.kt\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/Kotlin/src/main/kotlin/ConstEx.kt\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Kotlin/src/main/kotlin/example/ConstEx.kt\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/Kotlin/src/main/kotlin/DefaultArgumentsEx.kt\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Kotlin/src/main/kotlin/example/DefaultArgumentsEx.kt\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/Kotlin/src/main/kotlin/GenericEx.kt\" beforeDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/Kotlin/src/main/kotlin/InfixEx.kt\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Kotlin/src/main/kotlin/example/InfixEx.kt\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/Kotlin/src/main/kotlin/InterfaceTest.kt\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Kotlin/src/main/kotlin/example/InterfaceTest.kt\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/Kotlin/src/main/kotlin/LateInitEx.kt\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Kotlin/src/main/kotlin/example/LateInitEx.kt\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/Kotlin/src/main/kotlin/LazyEx.kt\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Kotlin/src/main/kotlin/example/LazyEx.kt\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/Kotlin/src/main/kotlin/ListEx.kt\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Kotlin/src/main/kotlin/example/ListEx.kt\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/Kotlin/src/main/kotlin/Main.kt\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Kotlin/src/main/kotlin/example/Main.kt\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/Kotlin/src/main/kotlin/MapEx.kt\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Kotlin/src/main/kotlin/example/MapEx.kt\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/Kotlin/src/main/kotlin/NestedInnerClassEx.kt\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Kotlin/src/main/kotlin/example/NestedInnerClassEx.kt\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/Kotlin/src/main/kotlin/NullCheck.kt\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Kotlin/src/main/kotlin/example/NullCheck.kt\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/Kotlin/src/main/kotlin/Observer.kt\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Kotlin/src/main/kotlin/example/Observer.kt\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/Kotlin/src/main/kotlin/PolymorphismEx.kt\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Kotlin/src/main/kotlin/example/PolymorphismEx.kt\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/Kotlin/src/main/kotlin/Sameness.kt\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Kotlin/src/main/kotlin/example/Sameness.kt\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/Kotlin/src/main/kotlin/SetEx.kt\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Kotlin/src/main/kotlin/example/SetEx.kt\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/Kotlin/src/main/kotlin/StringEx.kt\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Kotlin/src/main/kotlin/example/StringEx.kt\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/Kotlin/src/main/kotlin/VarargEx.kt\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Kotlin/src/main/kotlin/example/VarargEx.kt\" afterDir=\"false\" />\n    </list>\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\n  </component>\n  <component name=\"ExternalProjectsManager\">\n    <system id=\"GRADLE\">\n      <state>\n        <task path=\"\">\n          <activation />\n        </task>\n        <task path=\"$PROJECT_DIR$/Kotlin\">\n          <activation />\n        </task>\n        <projects_view />\n      </state>\n    </system>\n  </component>\n  <component name=\"FileTemplateManagerImpl\">\n    <option name=\"RECENT_TEMPLATES\">\n      <list>\n        <option value=\"Kotlin Class\" />\n        <option value=\"Kotlin Script\" />\n      </list>\n    </option>\n  </component>\n  <component name=\"Git.Rebase.Settings\">\n    <option name=\"NEW_BASE\" value=\"git-test\" />\n  </component>\n  <component name=\"Git.Settings\">\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\n    <option name=\"UPDATE_TYPE\" value=\"REBASE\" />\n  </component>\n  <component name=\"GitSEFilterConfiguration\">\n    <file-type-list>\n      <filtered-out-file-type name=\"LOCAL_BRANCH\" />\n      <filtered-out-file-type name=\"REMOTE_BRANCH\" />\n      <filtered-out-file-type name=\"TAG\" />\n      <filtered-out-file-type name=\"COMMIT_BY_MESSAGE\" />\n    </file-type-list>\n  </component>\n  <component name=\"ProjectId\" id=\"20wszkxqw2o0iKtZparkgY7tOZk\" />\n  <component name=\"ProjectLevelVcsManager\">\n    <ConfirmationsSetting value=\"2\" id=\"Add\" />\n  </component>\n  <component name=\"ProjectViewState\">\n    <option name=\"autoscrollToSource\" value=\"true\" />\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\n    <option name=\"showLibraryContents\" value=\"true\" />\n    <option name=\"showMembers\" value=\"true\" />\n    <option name=\"showVisibilityIcons\" value=\"true\" />\n  </component>\n  <component name=\"PropertiesComponent\">\n    <property name=\"RunOnceActivity.OpenProjectViewOnStart\" value=\"true\" />\n    <property name=\"RunOnceActivity.ShowReadmeOnStart\" value=\"true\" />\n    <property name=\"WebServerToolWindowFactoryState\" value=\"false\" />\n    <property name=\"aspect.path.notification.shown\" value=\"true\" />\n    <property name=\"last_opened_file_path\" value=\"$PROJECT_DIR$/Kotlin/src/main/kotlin\" />\n    <property name=\"node.js.detected.package.eslint\" value=\"true\" />\n    <property name=\"node.js.detected.package.tslint\" value=\"true\" />\n    <property name=\"node.js.path.for.package.eslint\" value=\"project\" />\n    <property name=\"node.js.path.for.package.tslint\" value=\"project\" />\n    <property name=\"node.js.selected.package.eslint\" value=\"(autodetect)\" />\n    <property name=\"node.js.selected.package.tslint\" value=\"(autodetect)\" />\n    <property name=\"nodejs_package_manager_path\" value=\"npm\" />\n    <property name=\"project.structure.last.edited\" value=\"Modules\" />\n    <property name=\"project.structure.proportion\" value=\"0.0\" />\n    <property name=\"project.structure.side.proportion\" value=\"0.0\" />\n    <property name=\"settings.editor.selected.configurable\" value=\"vcs.Git\" />\n  </component>\n  <component name=\"RecentsManager\">\n    <key name=\"CopyFile.RECENT_KEYS\">\n      <recent name=\"$PROJECT_DIR$/Kotlin/src/main/kotlin\" />\n      <recent name=\"$PROJECT_DIR$/MSA\" />\n    </key>\n  </component>\n  <component name=\"RunManager\">\n    <configuration name=\"Kotlin\" type=\"GradleRunConfiguration\" factoryName=\"Gradle\">\n      <ExternalSystemSettings>\n        <option name=\"executionName\" />\n        <option name=\"externalProjectPath\" value=\"$PROJECT_DIR$/Kotlin\" />\n        <option name=\"externalSystemIdString\" value=\"GRADLE\" />\n        <option name=\"scriptParameters\" value=\"Main\" />\n        <option name=\"taskDescriptions\">\n          <list />\n        </option>\n        <option name=\"taskNames\">\n          <list />\n        </option>\n        <option name=\"vmOptions\" />\n      </ExternalSystemSettings>\n      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>\n      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>\n      <DebugAllEnabled>false</DebugAllEnabled>\n      <method v=\"2\" />\n    </configuration>\n  </component>\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\n  <component name=\"TaskManager\">\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\n      <changelist id=\"c086b399-b81d-44a1-a4ec-3ca53ac75bd1\" name=\"Default Changelist\" comment=\"\" />\n      <created>1636967251046</created>\n      <option name=\"number\" value=\"Default\" />\n      <option name=\"presentableId\" value=\"Default\" />\n      <updated>1636967251046</updated>\n      <workItem from=\"1636967254956\" duration=\"1588000\" />\n      <workItem from=\"1637065414958\" duration=\"145000\" />\n      <workItem from=\"1637065623221\" duration=\"565000\" />\n      <workItem from=\"1637066311422\" duration=\"5482000\" />\n      <workItem from=\"1637072939298\" duration=\"214000\" />\n      <workItem from=\"1637073321744\" duration=\"381000\" />\n      <workItem from=\"1637073713784\" duration=\"6000\" />\n      <workItem from=\"1637073734570\" duration=\"149000\" />\n      <workItem from=\"1637073893692\" duration=\"650000\" />\n      <workItem from=\"1637074753193\" duration=\"78000\" />\n      <workItem from=\"1637074841965\" duration=\"1748000\" />\n      <workItem from=\"1637142260042\" duration=\"2176000\" />\n      <workItem from=\"1637424581272\" duration=\"1366000\" />\n      <workItem from=\"1637486377983\" duration=\"193000\" />\n      <workItem from=\"1637593240481\" duration=\"60000\" />\n      <workItem from=\"1637682110760\" duration=\"226000\" />\n      <workItem from=\"1637764939999\" duration=\"677000\" />\n      <workItem from=\"1637766492920\" duration=\"211000\" />\n      <workItem from=\"1637852021330\" duration=\"822000\" />\n      <workItem from=\"1637854791313\" duration=\"1295000\" />\n      <workItem from=\"1637856105848\" duration=\"305000\" />\n      <workItem from=\"1639750698566\" duration=\"280000\" />\n      <workItem from=\"1640009596370\" duration=\"909000\" />\n      <workItem from=\"1640093322581\" duration=\"363000\" />\n      <workItem from=\"1640607915898\" duration=\"630000\" />\n      <workItem from=\"1640870867001\" duration=\"142000\" />\n      <workItem from=\"1640871048328\" duration=\"723000\" />\n      <workItem from=\"1640912842941\" duration=\"217000\" />\n      <workItem from=\"1640914591770\" duration=\"100000\" />\n      <workItem from=\"1641033554484\" duration=\"1277000\" />\n      <workItem from=\"1641128393892\" duration=\"325000\" />\n      <workItem from=\"1641128802101\" duration=\"742000\" />\n      <workItem from=\"1641216482199\" duration=\"337000\" />\n      <workItem from=\"1641217108904\" duration=\"598000\" />\n    </task>\n    <task id=\"LOCAL-00001\" summary=\"[TIL-3] Kotlin #2,3,4\">\n      <created>1637142386581</created>\n      <option name=\"number\" value=\"00001\" />\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1637142386581</updated>\n    </task>\n    <task id=\"LOCAL-00002\" summary=\"[TIL-3] MSA #8\">\n      <created>1637160722742</created>\n      <option name=\"number\" value=\"00002\" />\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1637160722742</updated>\n    </task>\n    <task id=\"LOCAL-00003\" summary=\"[TIL-4] MSA #9,10 Kotlin #5,6\">\n      <created>1637248172323</created>\n      <option name=\"number\" value=\"00003\" />\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1637248172324</updated>\n    </task>\n    <task id=\"LOCAL-00004\" summary=\"[TIL-5] MSA #11 Kotlin #7\">\n      <created>1637337110548</created>\n      <option name=\"number\" value=\"00004\" />\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1637337110548</updated>\n    </task>\n    <task id=\"LOCAL-00005\" summary=\"[TIL-6] Kotlin #8,9,10 (클래스)\">\n      <created>1637426325417</created>\n      <option name=\"number\" value=\"00005\" />\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1637426325417</updated>\n    </task>\n    <task id=\"LOCAL-00006\" summary=\"[TIL-7] Kotlin #11,12\">\n      <created>1637486557357</created>\n      <option name=\"number\" value=\"00006\" />\n      <option name=\"presentableId\" value=\"LOCAL-00006\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1637486557357</updated>\n    </task>\n    <task id=\"LOCAL-00007\" summary=\"[TIL-8] Kotlin #13 스코프\">\n      <created>1637593294837</created>\n      <option name=\"number\" value=\"00007\" />\n      <option name=\"presentableId\" value=\"LOCAL-00007\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1637593294837</updated>\n    </task>\n    <task id=\"LOCAL-00008\" summary=\"[TIL-9] Kotlin #15 스코프함수, MSA #11 소개끝\">\n      <created>1637766511367</created>\n      <option name=\"number\" value=\"00008\" />\n      <option name=\"presentableId\" value=\"LOCAL-00008\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1637766511367</updated>\n    </task>\n    <task id=\"LOCAL-00009\" summary=\"[TIL-10] MSA discoveryservice 프로젝트 생성\">\n      <created>1637855661696</created>\n      <option name=\"number\" value=\"00009\" />\n      <option name=\"presentableId\" value=\"LOCAL-00009\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1637855661696</updated>\n    </task>\n    <task id=\"LOCAL-00010\" summary=\"rebase test - main end\">\n      <created>1639485916090</created>\n      <option name=\"number\" value=\"00010\" />\n      <option name=\"presentableId\" value=\"LOCAL-00010\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1639485916090</updated>\n    </task>\n    <task id=\"LOCAL-00011\" summary=\"[TIL-26] Kotlin #26,27 컬렉션 함수\">\n      <created>1639750872915</created>\n      <option name=\"number\" value=\"00011\" />\n      <option name=\"presentableId\" value=\"LOCAL-00011\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1639750872915</updated>\n    </task>\n    <task id=\"LOCAL-00012\" summary=\"[TIL-27] Kotlin #28 컬렉션 함수-2\">\n      <created>1640010502115</created>\n      <option name=\"number\" value=\"00012\" />\n      <option name=\"presentableId\" value=\"LOCAL-00012\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1640010502115</updated>\n    </task>\n    <task id=\"LOCAL-00013\" summary=\"[TIL-28] Kotlin #28 컬렉션 함수-2\">\n      <created>1640093598435</created>\n      <option name=\"number\" value=\"00013\" />\n      <option name=\"presentableId\" value=\"LOCAL-00013\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1640093598435</updated>\n    </task>\n    <task id=\"LOCAL-00014\" summary=\"MSA E-commerce 애플리케이션 개요\">\n      <created>1640608603908</created>\n      <option name=\"number\" value=\"00014\" />\n      <option name=\"presentableId\" value=\"LOCAL-00014\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1640608603909</updated>\n    </task>\n    <task id=\"LOCAL-00015\" summary=\"Kotlin 29) 변수의 고급 기술 - 상수, lateinit, lazy\">\n      <created>1640870999941</created>\n      <option name=\"number\" value=\"00015\" />\n      <option name=\"presentableId\" value=\"LOCAL-00015\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1640870999941</updated>\n    </task>\n    <task id=\"LOCAL-00016\" summary=\"Kotlin 29) 변수의 고급 기술 - 상수, lateinit, lazy\">\n      <created>1640871142963</created>\n      <option name=\"number\" value=\"00016\" />\n      <option name=\"presentableId\" value=\"LOCAL-00016\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1640871142963</updated>\n    </task>\n    <task id=\"LOCAL-00017\" summary=\"Kotlin 30) 비트연산\">\n      <created>1640914652886</created>\n      <option name=\"number\" value=\"00017\" />\n      <option name=\"presentableId\" value=\"LOCAL-00017\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1640914652886</updated>\n    </task>\n    <task id=\"LOCAL-00018\" summary=\"Kotlin 31) 코루틴을 통한 비동기 처리\">\n      <created>1641129815526</created>\n      <option name=\"number\" value=\"00018\" />\n      <option name=\"presentableId\" value=\"LOCAL-00018\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1641129815526</updated>\n    </task>\n    <option name=\"localTasksCounter\" value=\"19\" />\n    <servers />\n  </component>\n  <component name=\"TypeScriptGeneratedFilesManager\">\n    <option name=\"version\" value=\"3\" />\n  </component>\n  <component name=\"Vcs.Log.History.Properties\">\n    <option name=\"COLUMN_ID_ORDER\">\n      <list>\n        <option value=\"Default.Root\" />\n        <option value=\"Default.Author\" />\n        <option value=\"Default.Date\" />\n        <option value=\"Default.Subject\" />\n        <option value=\"Space.CommitStatus\" />\n      </list>\n    </option>\n  </component>\n  <component name=\"Vcs.Log.Tabs.Properties\">\n    <option name=\"TAB_STATES\">\n      <map>\n        <entry key=\"1ab637f7-9fa3-483b-80ed-57c289fdb524\">\n          <value>\n            <State>\n              <option name=\"SHOW_ONLY_AFFECTED_CHANGES\" value=\"true\" />\n              <option name=\"FILTERS\">\n                <map>\n                  <entry key=\"branch\">\n                    <value>\n                      <list>\n                        <option value=\"HEAD\" />\n                      </list>\n                    </value>\n                  </entry>\n                  <entry key=\"structure\">\n                    <value>\n                      <list>\n                        <option value=\"dir:/Users/wisdom/study/TIL/Kotlin\" />\n                      </list>\n                    </value>\n                  </entry>\n                </map>\n              </option>\n            </State>\n          </value>\n        </entry>\n        <entry key=\"49396f6e-62bd-4957-9a9b-5745be29a889\">\n          <value>\n            <State />\n          </value>\n        </entry>\n        <entry key=\"MAIN\">\n          <value>\n            <State />\n          </value>\n        </entry>\n      </map>\n    </option>\n    <option name=\"OPEN_GENERIC_TABS\">\n      <map>\n        <entry key=\"1ab637f7-9fa3-483b-80ed-57c289fdb524\" value=\"TOOL_WINDOW\" />\n      </map>\n    </option>\n    <option name=\"oldMeFiltersMigrated\" value=\"true\" />\n  </component>\n  <component name=\"VcsManagerConfiguration\">\n    <MESSAGE value=\"[TIL-3] Kotlin #2,3,4\" />\n    <MESSAGE value=\"[TIL-3] MSA #8\" />\n    <MESSAGE value=\"[TIL-4] MSA #9,10 Kotlin #5,6\" />\n    <MESSAGE value=\"[TIL-5] MSA #11 Kotlin #7\" />\n    <MESSAGE value=\"[TIL-6] Kotlin #8,9,10 (클래스)\" />\n    <MESSAGE value=\"[TIL-6] Kotlin #11,12\" />\n    <MESSAGE value=\"[TIL-7] Kotlin #11,12\" />\n    <MESSAGE value=\"[TIL-8] Kotlin #13 스코프\" />\n    <MESSAGE value=\"[TIL-9] Kotlin #15 스코프함수, MSA #11 소개끝\" />\n    <MESSAGE value=\"[TIL-10] MSA discoveryservice 프로젝트 생성\" />\n    <MESSAGE value=\"rebase test - main end\" />\n    <MESSAGE value=\"[TIL-26] Kotlin #26,27 컬렉션 함수\" />\n    <MESSAGE value=\"[TIL-27] Kotlin #28 컬렉션 함수-2\" />\n    <MESSAGE value=\"[TIL-28] Kotlin #28 컬렉션 함수-2\" />\n    <MESSAGE value=\"MSA E-commerce 애플리케이션 개요\" />\n    <MESSAGE value=\"Kotlin 29) 변수의 고급 기술 - 상수, lateinit, lazy\" />\n    <MESSAGE value=\"Kotlin 30) 비트연산\" />\n    <MESSAGE value=\"Kotlin 31) 코루틴을 통한 비동기 처리\" />\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"Kotlin 31) 코루틴을 통한 비동기 처리\" />\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	
++++ b/.idea/workspace.xml	
+@@ -4,25 +4,193 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="c086b399-b81d-44a1-a4ec-3ca53ac75bd1" name="Default Changelist" comment="Kotlin 31) 코루틴을 통한 비동기 처리">
+-      <change afterPath="$PROJECT_DIR$/Kotlin/.idea/vcs.xml" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/Kotlin/src/main/kotlin/ch3/1_collection.kt" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/Kotlin/src/main/kotlin/ch3/2_joinToString().kt" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/Kotlin/src/main/kotlin/example/GenericEx.kt" afterDir="false" />
++    <list default="true" id="c086b399-b81d-44a1-a4ec-3ca53ac75bd1" name="Default Changelist" comment="[Spring batch] ItemProcessor interface 구조 이해">
++      <change afterPath="$PROJECT_DIR$/Java/Design Pattern/강의정리/07_Builder Pattern(1).md" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/Kotlin/src/main/kotlin/example/StringUtils.kt" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/Kotlin/src/main/kotlin/example/Tmp.kt" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/Spring/batch/09.JobExecutionListner, StepExecutionListener 이해.md" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/Java/Design Pattern/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Java/Design Pattern/.idea/gradle.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/Kotlin/src/main/kotlin/example/StringEx.kt" beforeDir="false" afterPath="$PROJECT_DIR$/Kotlin/src/main/kotlin/example/StringEx.kt" afterDir="false" />
++    </list>
++    <list id="3133d6c2-9b54-4b3e-b994-dc79457e1afd" name="ignore" comment="">
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/Kotlin.kotlin_module" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/build-history.bin" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/buildOutputCleanup.lock" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/class-attributes.tab" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/class-attributes.tab.keystream" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/class-attributes.tab.keystream.len" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/class-attributes.tab.len" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/class-attributes.tab.values.at" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/class-attributes.tab_i" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/class-fq-name-to-source.tab" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/class-fq-name-to-source.tab.keystream" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/class-fq-name-to-source.tab.keystream.len" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/class-fq-name-to-source.tab.len" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/class-fq-name-to-source.tab.values.at" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/class-fq-name-to-source.tab_i" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/executionHistory.bin" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/executionHistory.lock" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/file-to-id.tab" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/file-to-id.tab.keystream.len" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/file-to-id.tab.len" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/file-to-id.tab.values.at" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/file-to-id.tab_i" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/fileHashes.bin" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/fileHashes.lock" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/id-to-file.tab" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/id-to-file.tab.keystream" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/id-to-file.tab.keystream.len" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/id-to-file.tab.len" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/id-to-file.tab.values.at" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/id-to-file.tab_i" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/internal-name-to-source.tab" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/internal-name-to-source.tab.keystream" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/internal-name-to-source.tab.keystream.len" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/internal-name-to-source.tab.len" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/internal-name-to-source.tab.values.at" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/internal-name-to-source.tab_i" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/last-build.bin" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/lookups.tab" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/lookups.tab.keystream" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/lookups.tab.keystream.len" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/lookups.tab.len" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/lookups.tab.values.at" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/lookups.tab_i" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/outputFiles.bin" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/package-parts.tab" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/package-parts.tab.keystream" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/package-parts.tab.keystream.len" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/package-parts.tab.len" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/package-parts.tab.values.at" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/package-parts.tab_i" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/proto.tab" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/proto.tab.keystream" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/proto.tab.keystream.len" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/proto.tab.len" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/proto.tab.values.at" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/proto.tab_i" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/shelved.patch" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/source-to-classes.tab" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/source-to-classes.tab.keystream.len" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/source-to-classes.tab.len" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/source-to-classes.tab.values.at" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/source-to-classes.tab_i" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/source-to-output.tab" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/source-to-output.tab.keystream.len" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/source-to-output.tab.len" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/source-to-output.tab.values.at" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/source-to-output.tab_i" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/subtypes.tab" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/subtypes.tab.keystream" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/subtypes.tab.keystream.len" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/subtypes.tab.len" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/subtypes.tab.values.at" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/subtypes.tab_i" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/supertypes.tab" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/supertypes.tab.keystream" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/supertypes.tab.keystream.len" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/supertypes.tab.len" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/supertypes.tab.values.at" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/supertypes.tab_i" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/Kotlin.kotlin_module" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/build-history.bin" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/buildOutputCleanup.lock" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/class-attributes.tab" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/class-attributes.tab.keystream" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/class-attributes.tab.keystream.len" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/class-attributes.tab.len" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/class-attributes.tab.values.at" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/class-attributes.tab_i" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/class-fq-name-to-source.tab" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/class-fq-name-to-source.tab.keystream" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/class-fq-name-to-source.tab.keystream.len" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/class-fq-name-to-source.tab.len" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/class-fq-name-to-source.tab.values.at" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/class-fq-name-to-source.tab_i" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/executionHistory.bin" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/executionHistory.lock" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/file-to-id.tab" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/file-to-id.tab.keystream.len" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/file-to-id.tab.len" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/file-to-id.tab.values.at" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/file-to-id.tab_i" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/fileHashes.bin" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/fileHashes.lock" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/id-to-file.tab" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/id-to-file.tab.keystream" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/id-to-file.tab.keystream.len" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/id-to-file.tab.len" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/id-to-file.tab.values.at" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/id-to-file.tab_i" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/internal-name-to-source.tab" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/internal-name-to-source.tab.keystream" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/internal-name-to-source.tab.keystream.len" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/internal-name-to-source.tab.len" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/internal-name-to-source.tab.values.at" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/internal-name-to-source.tab_i" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/last-build.bin" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/lookups.tab" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/lookups.tab.keystream" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/lookups.tab.keystream.len" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/lookups.tab.len" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/lookups.tab.values.at" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/lookups.tab_i" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/outputFiles.bin" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/package-parts.tab" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/package-parts.tab.keystream" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/package-parts.tab.keystream.len" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/package-parts.tab.len" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/package-parts.tab.values.at" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/package-parts.tab_i" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/proto.tab" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/proto.tab.keystream" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/proto.tab.keystream.len" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/proto.tab.len" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/proto.tab.values.at" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/proto.tab_i" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/shelved.patch" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/source-to-classes.tab" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/source-to-classes.tab.keystream.len" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/source-to-classes.tab.len" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/source-to-classes.tab.values.at" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/source-to-classes.tab_i" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/source-to-output.tab" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/source-to-output.tab.keystream.len" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/source-to-output.tab.len" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/source-to-output.tab.values.at" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/source-to-output.tab_i" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/subtypes.tab" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/subtypes.tab.keystream" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/subtypes.tab.keystream.len" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/subtypes.tab.len" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/subtypes.tab.values.at" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/subtypes.tab_i" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/supertypes.tab" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/supertypes.tab.keystream" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/supertypes.tab.keystream.len" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/supertypes.tab.len" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/supertypes.tab.values.at" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]1/supertypes.tab_i" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/Java/Design Pattern/.gitignore" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/Java/Design Pattern/build.gradle" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/Java/Design Pattern/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/Java/Design Pattern/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/Java/Design Pattern/gradlew" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/Java/Design Pattern/gradlew.bat" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/Java/Design Pattern/settings.gradle" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/Java/Design Pattern/src/main/java/com/example/designpattern/DesignPatternApplication.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/Java/Design Pattern/src/main/resources/application.properties" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/Java/Design Pattern/src/test/java/com/example/designpattern/DesignPatternApplicationTests.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/Kotlin/.idea/uiDesigner.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/Kotlin/.gradle/7.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/Kotlin/.gradle/7.1/executionHistory/executionHistory.bin" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/Kotlin/.gradle/7.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Kotlin/.gradle/7.1/executionHistory/executionHistory.lock" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/Kotlin/.gradle/7.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/Kotlin/.gradle/7.1/fileHashes/fileHashes.bin" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/Kotlin/.gradle/7.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Kotlin/.gradle/7.1/fileHashes/fileHashes.lock" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/Kotlin/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Kotlin/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/Kotlin/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/Kotlin/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/Kotlin/build/classes/kotlin/main/Dog.class" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/Kotlin/build/classes/kotlin/main/Eater$DefaultImpls.class" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/Kotlin/build/classes/kotlin/main/Eater.class" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/Kotlin/build/classes/kotlin/main/InterfaceTestKt.class" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/Kotlin/.gradle/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Kotlin/.gradle/checksums/checksums.lock" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/Kotlin/build/classes/kotlin/main/META-INF/Kotlin.kotlin_module" beforeDir="false" afterPath="$PROJECT_DIR$/Kotlin/build/classes/kotlin/main/META-INF/Kotlin.kotlin_module" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/Kotlin/build/classes/kotlin/main/MainKt.class" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/Kotlin/build/classes/kotlin/main/Runner.class" beforeDir="false" />
+       <change beforePath="$PROJECT_DIR$/Kotlin/build/kotlin/compileKotlin/build-history.bin" beforeDir="false" afterPath="$PROJECT_DIR$/Kotlin/build/kotlin/compileKotlin/build-history.bin" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/Kotlin/build/kotlin/compileKotlin/caches-jvm/inputs/source-to-output.tab" beforeDir="false" afterPath="$PROJECT_DIR$/Kotlin/build/kotlin/compileKotlin/caches-jvm/inputs/source-to-output.tab" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/Kotlin/build/kotlin/compileKotlin/caches-jvm/inputs/source-to-output.tab.keystream" beforeDir="false" afterPath="$PROJECT_DIR$/Kotlin/build/kotlin/compileKotlin/caches-jvm/inputs/source-to-output.tab.keystream" afterDir="false" />
+@@ -98,26 +266,6 @@
+       <change beforePath="$PROJECT_DIR$/Kotlin/build/kotlin/compileKotlin/caches-jvm/lookups/lookups.tab.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/Kotlin/build/kotlin/compileKotlin/caches-jvm/lookups/lookups.tab.values.at" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/Kotlin/build/kotlin/compileKotlin/caches-jvm/lookups/lookups.tab_i" beforeDir="false" afterPath="$PROJECT_DIR$/Kotlin/build/kotlin/compileKotlin/caches-jvm/lookups/lookups.tab_i" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/Kotlin/build/kotlin/compileKotlin/last-build.bin" beforeDir="false" afterPath="$PROJECT_DIR$/Kotlin/build/kotlin/compileKotlin/last-build.bin" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/Kotlin/src/main/kotlin/BitEx.kt" beforeDir="false" afterPath="$PROJECT_DIR$/Kotlin/src/main/kotlin/example/BitEx.kt" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/Kotlin/src/main/kotlin/CollectionEx.kt" beforeDir="false" afterPath="$PROJECT_DIR$/Kotlin/src/main/kotlin/example/CollectionEx.kt" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/Kotlin/src/main/kotlin/ConstEx.kt" beforeDir="false" afterPath="$PROJECT_DIR$/Kotlin/src/main/kotlin/example/ConstEx.kt" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/Kotlin/src/main/kotlin/DefaultArgumentsEx.kt" beforeDir="false" afterPath="$PROJECT_DIR$/Kotlin/src/main/kotlin/example/DefaultArgumentsEx.kt" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/Kotlin/src/main/kotlin/GenericEx.kt" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/Kotlin/src/main/kotlin/InfixEx.kt" beforeDir="false" afterPath="$PROJECT_DIR$/Kotlin/src/main/kotlin/example/InfixEx.kt" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/Kotlin/src/main/kotlin/InterfaceTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/Kotlin/src/main/kotlin/example/InterfaceTest.kt" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/Kotlin/src/main/kotlin/LateInitEx.kt" beforeDir="false" afterPath="$PROJECT_DIR$/Kotlin/src/main/kotlin/example/LateInitEx.kt" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/Kotlin/src/main/kotlin/LazyEx.kt" beforeDir="false" afterPath="$PROJECT_DIR$/Kotlin/src/main/kotlin/example/LazyEx.kt" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/Kotlin/src/main/kotlin/ListEx.kt" beforeDir="false" afterPath="$PROJECT_DIR$/Kotlin/src/main/kotlin/example/ListEx.kt" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/Kotlin/src/main/kotlin/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/Kotlin/src/main/kotlin/example/Main.kt" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/Kotlin/src/main/kotlin/MapEx.kt" beforeDir="false" afterPath="$PROJECT_DIR$/Kotlin/src/main/kotlin/example/MapEx.kt" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/Kotlin/src/main/kotlin/NestedInnerClassEx.kt" beforeDir="false" afterPath="$PROJECT_DIR$/Kotlin/src/main/kotlin/example/NestedInnerClassEx.kt" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/Kotlin/src/main/kotlin/NullCheck.kt" beforeDir="false" afterPath="$PROJECT_DIR$/Kotlin/src/main/kotlin/example/NullCheck.kt" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/Kotlin/src/main/kotlin/Observer.kt" beforeDir="false" afterPath="$PROJECT_DIR$/Kotlin/src/main/kotlin/example/Observer.kt" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/Kotlin/src/main/kotlin/PolymorphismEx.kt" beforeDir="false" afterPath="$PROJECT_DIR$/Kotlin/src/main/kotlin/example/PolymorphismEx.kt" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/Kotlin/src/main/kotlin/Sameness.kt" beforeDir="false" afterPath="$PROJECT_DIR$/Kotlin/src/main/kotlin/example/Sameness.kt" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/Kotlin/src/main/kotlin/SetEx.kt" beforeDir="false" afterPath="$PROJECT_DIR$/Kotlin/src/main/kotlin/example/SetEx.kt" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/Kotlin/src/main/kotlin/StringEx.kt" beforeDir="false" afterPath="$PROJECT_DIR$/Kotlin/src/main/kotlin/example/StringEx.kt" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/Kotlin/src/main/kotlin/VarargEx.kt" beforeDir="false" afterPath="$PROJECT_DIR$/Kotlin/src/main/kotlin/example/VarargEx.kt" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -176,7 +324,7 @@
+     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+     <property name="WebServerToolWindowFactoryState" value="false" />
+     <property name="aspect.path.notification.shown" value="true" />
+-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Kotlin/src/main/kotlin" />
++    <property name="last_opened_file_path" value="$PROJECT_DIR$/Spring/batch" />
+     <property name="node.js.detected.package.eslint" value="true" />
+     <property name="node.js.detected.package.tslint" value="true" />
+     <property name="node.js.path.for.package.eslint" value="project" />
+@@ -187,10 +335,11 @@
+     <property name="project.structure.last.edited" value="Modules" />
+     <property name="project.structure.proportion" value="0.0" />
+     <property name="project.structure.side.proportion" value="0.0" />
+-    <property name="settings.editor.selected.configurable" value="vcs.Git" />
++    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.CommitDialog" />
+   </component>
+   <component name="RecentsManager">
+     <key name="CopyFile.RECENT_KEYS">
++      <recent name="$PROJECT_DIR$/Spring/batch" />
+       <recent name="$PROJECT_DIR$/Kotlin/src/main/kotlin" />
+       <recent name="$PROJECT_DIR$/MSA" />
+     </key>
+@@ -220,6 +369,7 @@
+   <component name="TaskManager">
+     <task active="true" id="Default" summary="Default task">
+       <changelist id="c086b399-b81d-44a1-a4ec-3ca53ac75bd1" name="Default Changelist" comment="" />
++      <changelist id="3133d6c2-9b54-4b3e-b994-dc79457e1afd" name="ignore" comment="" />
+       <created>1636967251046</created>
+       <option name="number" value="Default" />
+       <option name="presentableId" value="Default" />
+@@ -258,6 +408,29 @@
+       <workItem from="1641128802101" duration="742000" />
+       <workItem from="1641216482199" duration="337000" />
+       <workItem from="1641217108904" duration="598000" />
++      <workItem from="1641819624652" duration="1118000" />
++      <workItem from="1641908695889" duration="2008000" />
++      <workItem from="1642082048465" duration="1422000" />
++      <workItem from="1642083803235" duration="85000" />
++      <workItem from="1642172300565" duration="1146000" />
++      <workItem from="1642422090994" duration="1022000" />
++      <workItem from="1642427591317" duration="86000" />
++      <workItem from="1642513753164" duration="419000" />
++      <workItem from="1642516170174" duration="619000" />
++      <workItem from="1642547295583" duration="531000" />
++      <workItem from="1642549002995" duration="69000" />
++      <workItem from="1643118130159" duration="1662000" />
++      <workItem from="1643198724893" duration="920000" />
++      <workItem from="1643205634486" duration="1095000" />
++      <workItem from="1643295194943" duration="758000" />
++      <workItem from="1643377374818" duration="661000" />
++      <workItem from="1643461381480" duration="674000" />
++      <workItem from="1643526144851" duration="2031000" />
++      <workItem from="1643594363895" duration="731000" />
++      <workItem from="1643805786893" duration="559000" />
++      <workItem from="1643888863465" duration="607000" />
++      <workItem from="1643983166510" duration="484000" />
++      <workItem from="1644151499799" duration="504000" />
+     </task>
+     <task id="LOCAL-00001" summary="[TIL-3] Kotlin #2,3,4">
+       <created>1637142386581</created>
+@@ -385,7 +558,175 @@
+       <option name="project" value="LOCAL" />
+       <updated>1641129815526</updated>
+     </task>
+-    <option name="localTasksCounter" value="19" />
++    <task id="LOCAL-00019" summary="[Kotlin] 5장 예제 작성(1~9)">
++      <created>1641912732534</created>
++      <option name="number" value="00019" />
++      <option name="presentableId" value="LOCAL-00019" />
++      <option name="project" value="LOCAL" />
++      <updated>1641912732534</updated>
++    </task>
++    <task id="LOCAL-00020" summary="[Feign Client] 정리 및 예시코드">
++      <created>1641915296776</created>
++      <option name="number" value="00020" />
++      <option name="presentableId" value="LOCAL-00020" />
++      <option name="project" value="LOCAL" />
++      <updated>1641915296776</updated>
++    </task>
++    <task id="LOCAL-00021" summary="[Spring batch] 정리">
++      <created>1642083852251</created>
++      <option name="number" value="00021" />
++      <option name="presentableId" value="LOCAL-00021" />
++      <option name="project" value="LOCAL" />
++      <updated>1642083852251</updated>
++    </task>
++    <task id="LOCAL-00022" summary="[Kotlin] 5장 예제 작성">
++      <created>1642172314090</created>
++      <option name="number" value="00022" />
++      <option name="presentableId" value="LOCAL-00022" />
++      <option name="project" value="LOCAL" />
++      <updated>1642172314090</updated>
++    </task>
++    <task id="LOCAL-00023" summary="[Spring batch] 구조 정리">
++      <created>1642427639349</created>
++      <option name="number" value="00023" />
++      <option name="presentableId" value="LOCAL-00023" />
++      <option name="project" value="LOCAL" />
++      <updated>1642427639349</updated>
++    </task>
++    <task id="LOCAL-00024" summary="[Spring batch] 테이블 구조 정리">
++      <created>1642516317048</created>
++      <option name="number" value="00024" />
++      <option name="presentableId" value="LOCAL-00024" />
++      <option name="project" value="LOCAL" />
++      <updated>1642516317048</updated>
++    </task>
++    <task id="LOCAL-00025" summary="[Spring batch] 테이블 구조 정리">
++      <created>1642549050941</created>
++      <option name="number" value="00025" />
++      <option name="presentableId" value="LOCAL-00025" />
++      <option name="project" value="LOCAL" />
++      <updated>1642549050941</updated>
++    </task>
++    <task id="LOCAL-00026" summary="[JPA] 정리">
++      <created>1643121307088</created>
++      <option name="number" value="00026" />
++      <option name="presentableId" value="LOCAL-00026" />
++      <option name="project" value="LOCAL" />
++      <updated>1643121307088</updated>
++    </task>
++    <task id="LOCAL-00027" summary="[Spring batch] ExecutionContext 이해">
++      <created>1643123461053</created>
++      <option name="number" value="00027" />
++      <option name="presentableId" value="LOCAL-00027" />
++      <option name="project" value="LOCAL" />
++      <updated>1643123461053</updated>
++    </task>
++    <task id="LOCAL-00028" summary="스프링 빈(Bean)의 개념과 생성 원리">
++      <created>1643201151407</created>
++      <option name="number" value="00028" />
++      <option name="presentableId" value="LOCAL-00028" />
++      <option name="project" value="LOCAL" />
++      <updated>1643201151407</updated>
++    </task>
++    <task id="LOCAL-00029" summary="[Spring batch] Task 기반 배치와 Chunk 기반 배치">
++      <created>1643206200330</created>
++      <option name="number" value="00029" />
++      <option name="presentableId" value="LOCAL-00029" />
++      <option name="project" value="LOCAL" />
++      <updated>1643206200330</updated>
++    </task>
++    <task id="LOCAL-00030" summary="[Spring batch] @JobScope와 @StepScope 이해">
++      <created>1643295271050</created>
++      <option name="number" value="00030" />
++      <option name="presentableId" value="LOCAL-00030" />
++      <option name="project" value="LOCAL" />
++      <updated>1643295271050</updated>
++    </task>
++    <task id="LOCAL-00031" summary="[Spring batch] JDBC 데이터 읽기 - Cursor/Paging 기반">
++      <created>1643526466753</created>
++      <option name="number" value="00031" />
++      <option name="presentableId" value="LOCAL-00031" />
++      <option name="project" value="LOCAL" />
++      <updated>1643526466753</updated>
++    </task>
++    <task id="LOCAL-00032" summary="[Spring batch] JPA 데이터 읽기">
++      <created>1643536980044</created>
++      <option name="number" value="00032" />
++      <option name="presentableId" value="LOCAL-00032" />
++      <option name="project" value="LOCAL" />
++      <updated>1643536980044</updated>
++    </task>
++    <task id="LOCAL-00033" summary="[Spring batch] ItemWriter interface 구조">
++      <created>1643537947407</created>
++      <option name="number" value="00033" />
++      <option name="presentableId" value="LOCAL-00033" />
++      <option name="project" value="LOCAL" />
++      <updated>1643537947407</updated>
++    </task>
++    <task id="LOCAL-00034" summary="[Spring batch] JDBC 데이터 쓰기">
++      <created>1643594416062</created>
++      <option name="number" value="00034" />
++      <option name="presentableId" value="LOCAL-00034" />
++      <option name="project" value="LOCAL" />
++      <updated>1643594416062</updated>
++    </task>
++    <task id="LOCAL-00035" summary="[Spring batch] @JobScope와 @StepScope 이해">
++      <created>1643594608780</created>
++      <option name="number" value="00035" />
++      <option name="presentableId" value="LOCAL-00035" />
++      <option name="project" value="LOCAL" />
++      <updated>1643594608780</updated>
++    </task>
++    <task id="LOCAL-00036" summary="[Spring batch] @JobScope와 @StepScope 이해">
++      <created>1643594642058</created>
++      <option name="number" value="00036" />
++      <option name="presentableId" value="LOCAL-00036" />
++      <option name="project" value="LOCAL" />
++      <updated>1643594642058</updated>
++    </task>
++    <task id="LOCAL-00037" summary="[Spring batch] @JobScope와 @StepScope 이해">
++      <created>1643594761235</created>
++      <option name="number" value="00037" />
++      <option name="presentableId" value="LOCAL-00037" />
++      <option name="project" value="LOCAL" />
++      <updated>1643594761235</updated>
++    </task>
++    <task id="LOCAL-00038" summary="[Spring batch] JDBC 데이터 쓰기">
++      <created>1643594775762</created>
++      <option name="number" value="00038" />
++      <option name="presentableId" value="LOCAL-00038" />
++      <option name="project" value="LOCAL" />
++      <updated>1643594775762</updated>
++    </task>
++    <task id="LOCAL-00039" summary="[Spring batch] JPA 데이터 읽기">
++      <created>1643594783677</created>
++      <option name="number" value="00039" />
++      <option name="presentableId" value="LOCAL-00039" />
++      <option name="project" value="LOCAL" />
++      <updated>1643594783677</updated>
++    </task>
++    <task id="LOCAL-00040" summary="[Spring batch] ItemWriter interface 구조">
++      <created>1643594796050</created>
++      <option name="number" value="00040" />
++      <option name="presentableId" value="LOCAL-00040" />
++      <option name="project" value="LOCAL" />
++      <updated>1643594796050</updated>
++    </task>
++    <task id="LOCAL-00041" summary="[Spring batch] JDBC 데이터 쓰기">
++      <created>1643594812956</created>
++      <option name="number" value="00041" />
++      <option name="presentableId" value="LOCAL-00041" />
++      <option name="project" value="LOCAL" />
++      <updated>1643594812956</updated>
++    </task>
++    <task id="LOCAL-00042" summary="[Spring batch] ItemProcessor interface 구조 이해">
++      <created>1643805837949</created>
++      <option name="number" value="00042" />
++      <option name="presentableId" value="LOCAL-00042" />
++      <option name="project" value="LOCAL" />
++      <updated>1643805837949</updated>
++    </task>
++    <option name="localTasksCounter" value="43" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+@@ -435,9 +776,140 @@
+             <State />
+           </value>
+         </entry>
++        <entry key="535c7fff-eb65-4d12-8675-c2554f460667">
++          <value>
++            <State>
++              <option name="SHOW_ONLY_AFFECTED_CHANGES" value="true" />
++              <option name="FILTERS">
++                <map>
++                  <entry key="branch">
++                    <value>
++                      <list>
++                        <option value="HEAD" />
++                      </list>
++                    </value>
++                  </entry>
++                  <entry key="structure">
++                    <value>
++                      <list>
++                        <option value="dir:/Users/wisdom/study/TIL/MSA" />
++                      </list>
++                    </value>
++                  </entry>
++                </map>
++              </option>
++            </State>
++          </value>
++        </entry>
++        <entry key="5b5133f5-2bee-4315-85d8-c203dd6653bc">
++          <value>
++            <State>
++              <option name="SHOW_ONLY_AFFECTED_CHANGES" value="true" />
++              <option name="FILTERS">
++                <map>
++                  <entry key="branch">
++                    <value>
++                      <list>
++                        <option value="HEAD" />
++                      </list>
++                    </value>
++                  </entry>
++                  <entry key="structure">
++                    <value>
++                      <list>
++                        <option value="dir:/Users/wisdom/study/TIL/Spring/batch" />
++                      </list>
++                    </value>
++                  </entry>
++                </map>
++              </option>
++            </State>
++          </value>
++        </entry>
++        <entry key="8b3e96bf-099a-4643-b070-44e12e43b273">
++          <value>
++            <State>
++              <option name="SHOW_ONLY_AFFECTED_CHANGES" value="true" />
++              <option name="FILTERS">
++                <map>
++                  <entry key="branch">
++                    <value>
++                      <list>
++                        <option value="HEAD" />
++                      </list>
++                    </value>
++                  </entry>
++                  <entry key="roots">
++                    <value>
++                      <list>
++                        <option value="$PROJECT_DIR$" />
++                      </list>
++                    </value>
++                  </entry>
++                </map>
++              </option>
++            </State>
++          </value>
++        </entry>
+         <entry key="MAIN">
+           <value>
+-            <State />
++            <State>
++              <option name="CUSTOM_BOOLEAN_PROPERTIES">
++                <map>
++                  <entry key="Show.Git.Branches" value="false" />
++                </map>
++              </option>
++            </State>
++          </value>
++        </entry>
++        <entry key="b9f45d91-5dbd-4ca1-9290-f1f9dc45d547">
++          <value>
++            <State>
++              <option name="SHOW_ONLY_AFFECTED_CHANGES" value="true" />
++              <option name="FILTERS">
++                <map>
++                  <entry key="branch">
++                    <value>
++                      <list>
++                        <option value="HEAD" />
++                      </list>
++                    </value>
++                  </entry>
++                  <entry key="structure">
++                    <value>
++                      <list>
++                        <option value="dir:/Users/wisdom/study/TIL/tutorial-msa" />
++                      </list>
++                    </value>
++                  </entry>
++                </map>
++              </option>
++            </State>
++          </value>
++        </entry>
++        <entry key="edf86a09-b7aa-4a63-9f34-1e812c93b44e">
++          <value>
++            <State>
++              <option name="SHOW_ONLY_AFFECTED_CHANGES" value="true" />
++              <option name="FILTERS">
++                <map>
++                  <entry key="branch">
++                    <value>
++                      <list>
++                        <option value="HEAD" />
++                      </list>
++                    </value>
++                  </entry>
++                  <entry key="roots">
++                    <value>
++                      <list>
++                        <option value="$PROJECT_DIR$" />
++                      </list>
++                    </value>
++                  </entry>
++                </map>
++              </option>
++            </State>
+           </value>
+         </entry>
+       </map>
+@@ -445,20 +917,15 @@
+     <option name="OPEN_GENERIC_TABS">
+       <map>
+         <entry key="1ab637f7-9fa3-483b-80ed-57c289fdb524" value="TOOL_WINDOW" />
++        <entry key="535c7fff-eb65-4d12-8675-c2554f460667" value="TOOL_WINDOW" />
++        <entry key="5b5133f5-2bee-4315-85d8-c203dd6653bc" value="TOOL_WINDOW" />
++        <entry key="b9f45d91-5dbd-4ca1-9290-f1f9dc45d547" value="TOOL_WINDOW" />
++        <entry key="edf86a09-b7aa-4a63-9f34-1e812c93b44e" value="TOOL_WINDOW" />
+       </map>
+     </option>
+     <option name="oldMeFiltersMigrated" value="true" />
+   </component>
+   <component name="VcsManagerConfiguration">
+-    <MESSAGE value="[TIL-3] Kotlin #2,3,4" />
+-    <MESSAGE value="[TIL-3] MSA #8" />
+-    <MESSAGE value="[TIL-4] MSA #9,10 Kotlin #5,6" />
+-    <MESSAGE value="[TIL-5] MSA #11 Kotlin #7" />
+-    <MESSAGE value="[TIL-6] Kotlin #8,9,10 (클래스)" />
+-    <MESSAGE value="[TIL-6] Kotlin #11,12" />
+-    <MESSAGE value="[TIL-7] Kotlin #11,12" />
+-    <MESSAGE value="[TIL-8] Kotlin #13 스코프" />
+-    <MESSAGE value="[TIL-9] Kotlin #15 스코프함수, MSA #11 소개끝" />
+     <MESSAGE value="[TIL-10] MSA discoveryservice 프로젝트 생성" />
+     <MESSAGE value="rebase test - main end" />
+     <MESSAGE value="[TIL-26] Kotlin #26,27 컬렉션 함수" />
+@@ -468,6 +935,22 @@
+     <MESSAGE value="Kotlin 29) 변수의 고급 기술 - 상수, lateinit, lazy" />
+     <MESSAGE value="Kotlin 30) 비트연산" />
+     <MESSAGE value="Kotlin 31) 코루틴을 통한 비동기 처리" />
+-    <option name="LAST_COMMIT_MESSAGE" value="Kotlin 31) 코루틴을 통한 비동기 처리" />
++    <MESSAGE value="[Kotlin] 5장 예제 작성(1~9)" />
++    <MESSAGE value="[Feign Client] 정리 및 예시코드" />
++    <MESSAGE value="[Spring batch] 정리" />
++    <MESSAGE value="[Kotlin] 5장 예제 작성" />
++    <MESSAGE value="[Spring batch] 구조 정리" />
++    <MESSAGE value="[Spring batch] 테이블 구조 정리" />
++    <MESSAGE value="[JPA] 정리" />
++    <MESSAGE value="[Spring batch] ExecutionContext 이해" />
++    <MESSAGE value="스프링 빈(Bean)의 개념과 생성 원리" />
++    <MESSAGE value="[Spring batch] Task 기반 배치와 Chunk 기반 배치" />
++    <MESSAGE value="[Spring batch] JDBC 데이터 읽기 - Cursor/Paging 기반" />
++    <MESSAGE value="[Spring batch] @JobScope와 @StepScope 이해" />
++    <MESSAGE value="[Spring batch] JPA 데이터 읽기" />
++    <MESSAGE value="[Spring batch] ItemWriter interface 구조" />
++    <MESSAGE value="[Spring batch] JDBC 데이터 쓰기" />
++    <MESSAGE value="[Spring batch] ItemProcessor interface 구조 이해" />
++    <option name="LAST_COMMIT_MESSAGE" value="[Spring batch] ItemProcessor interface 구조 이해" />
+   </component>
+ </project>
+\ No newline at end of file
