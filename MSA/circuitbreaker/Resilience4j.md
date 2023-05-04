@@ -53,3 +53,55 @@ Resilience4j는 서킷 브레이커와 같은 방식으로 재시도 관련된 �
 - maxRetryAttempts = 3: 최대 두 번의 재시도를 수행한다.
 - waitDuration = 1000: 재시도 사이의 대기 시간은 1초다.
 - retryExceptions = IntervalServerError:HTTP 요청에 대한 응답으로 500 상태 코드가 오고, 발생한 예외가 IntervalServerError인 경우에만 재시도를 트리거 한다.
+
+# Core modules
+
+resilience4j는 다음과 같은 기능을 제공하고 각 기능에 대한 모듈 라이브러리를 제공한다.
+
+| 기능 | 설명 | 모듈 |
+| --- | --- | --- |
+| CircuitBreaker | backend system의 상태 관리.CLOSED, OPEN, HALF_OPEN, DISABLED, FORCED_OPEN 상태가 있음 | resilience4j-circuitbreaker |
+| Bulkhead | 병렬 작업 제한 관리 | resilience4j-bulkhead |
+| RateLimiter | 요청 제한 관리 | resilience4j-ratelimiter |
+| Retry | 재시도 관리 | resilience4j-retry |
+| TimeLimiter | 실행 시간 제한 관리 | resilience4j-timelimiter |
+| Cache | 캐시 처리 | resilience4j-cache |
+
+core module들은 모두 resilience4j-core modue을 참조한다.
+
+# Framework modules
+
+Resilience4j를 사용하기 위한 스프링 관련 라이브러리를 스프링이 제공하지 않고 Resilience4j가 제공해준다.
+
+이는 다른 framework에 대해서도 마찬가지이다.
+
+- resilience4j-spring-boot: Spring Boot Starter
+- resilience4j-spring-boot2: Spring Boot 2 Starter
+- resilience4j-ratpack: Ratpack Starter
+- resilience4j-vertx: Vertx Future decorator
+
+이 모듈들은 모두 resilience4j-framework-common을 참조한다.
+
+### Spring 관련 라이브러리 구성
+
+resilience4j-spring-boot2는 resilience4j-spring을 참조하고 resilience4j-spring은 resilience4j-framework-common을 참조한다.
+
+설정 정보에 대한 구성도 동일하게 상위 모듈의 class를 확장해서 쓰는 형태이다.
+
+예를 들어 CircuitBreakerProperties는 다음과 같이 구성되어 있다.
+
+![CircuitBreakerProperties.png](./img/CircuitBreakerProperties.png)
+
+Bulkhead, RateLimiter, Retry, TimeLimiter도 동일한 구성이며 다음과 같다.
+
+| resilience4j-spring-boot2 | resilience4j-spring | resilience4j-framework-common | resilience4j-framework-common |
+| --- | --- | --- | --- |
+| BulkheadProperties | BulkheadConfigurationProperties | BulkheadConfigurationProperties.class | CommonProperties |
+| CircuitBreakerProperties | CircuitBreakerConfigurationProperties | CircuitBreakerConfigurationProperties | CommonProperties |
+| RateLimiterProperties | RateLimiterConfigurationProperties | RateLimiterConfigurationProperties | CommonProperties |
+| RetryProperties | RetryConfigurationProperties | RetryConfigurationProperties | CommonProperties |
+| TimeLimiterProperties | TimeLimiterConfigurationProperties | TimeLimiterConfigurationProperties | CommonProperties |
+
+기본적인 설정은 모두 resilience4j-framework-common의 *Propeties에 있고 이를 확장한 resilience4j-spring은 order 정보만 추가로 가지고 있으며 이를 확장한 resilience4j-spring-boot2의 *Properties는 아무 설정값이 없다.
+
+역할로 나누어 jar가 구성되어 있는데 resilience4j-spring-boot2는 boot autoconfiguration으로 동작할 설정을 담당하고 resilience4j-spring은 이렇게 boot로 설정된 값을 *Registry에 등록 및 spring bean 생성을 담당한다.
